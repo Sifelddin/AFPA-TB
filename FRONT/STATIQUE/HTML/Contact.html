@@ -28,46 +28,62 @@
    <fieldset>
        <legend>Choose your favorite</legend>
    <label for="name">Votre nom* : </label>
-    <input type="text" name="nom"> 
+    <input type="text" id="name" name="nom" required> 
     
    <br>
    <label for="prénom">Votre prénom* :  </label>
-   <input type="text" name="prenom">
+   <input type="text" id="prénom" name="prenom" required>
    <br>
    <br>
-   <label for="Sexe">Sexe*</label>
-   <input type="radio" name="Sexe" value="Féminin">Féminin
-   <input type="radio" name="Sexe" value="Masculin">Masculin
+   <label >Sexe*</label>
+   <input type="radio"  name="female" value="Féminin">Féminin
+   <input type="radio"  name="male" value="Masculin">Masculin
+
    <br>
-   <label for="Data">Date de naissance</label>
-   <input type="date" name="data" value=""><br>
+   <br>
+   <label for="Data">Date de naissance* : </label>
+   <input type="date" id="Data" name="data" value="" required><br>
    
-       <label for="CP">Code postal</label><input type="number" name="CP"><br>
-       <label for="Adresse">Adresse</label><input type="text" name="Adresse"><br>
-       <label for="ville">ville</label><input type="text" name="ville"><br>
-       <label for="email">email</label><input type="email" name="email"><br>
+       <label >Code postal* : <input type="number" name="CP" required></label><br>
+       <label >Adresse : <input type="text" name="Adresse"></label><br>
+       <label >ville : <input type="text" name="ville"></label><br>
+       <label >email* : <input type="email" name="email" placeholder="dave.loper@afpa.fr" required></label><br>
    </fieldset>
+   <br><br>
    <fieldset>
        <legend>
            Votre demande
        </legend>
-       <label for="Sujet">*Sujet</label>
-       <select id="Sujet" >
+       <label for="Sujet">Sujet*</label>
+       <select id="Sujet" name="sujet" >
         <option value="" selected disabled >veulliez séléctionner un Sujet</option>
         <option value="Mes commandes">Mes commandes</option>
         <option value="Question sur le produit">Question sur le produit</option>
         <option value="Réclamation">Réclamation</option>
         <option value="Autre">Autre</option>
        </select>
+       <br>
+       <label for="cumments">Votre question* : </label>
+       <textarea id="cumments" name="cumments"
+          rows="3" cols="33">
+</textarea>
+
    </fieldset>
+<br>
+   <input type="checkbox" id="accepter" required>*j'accepte le traitement informatique de ce formulaire
+   <br>
+   <br>
+   <button type="submit" value="">Envoyer</button>
+   <button type="reset" value="annuler">annuler</button>
 </form>
 
 <hr>
+</main>
     <footer>
         <ul>
-            <li>Mention légales</li>
-            <li>Horaires</li>
-            <li>Plan du site</li>
+            <li><a href="#">Mention légales</a></li>
+            <li><a href="#">Horaires</a></li>
+            <li><a href="#">Plan du site</a></li>
         </ul>
     </footer>
 </body>
