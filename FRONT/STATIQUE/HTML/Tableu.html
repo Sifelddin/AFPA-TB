@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <title>Tableu</title>
 </head>
 <body>
     
     <header>
-       
-        <img src="../HTML/jarditou_css/jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo">
-        <p>la qualité depuis 70 ans</p>
-        <nav>
-            <ul>
-                <li><a href="index.html" target="_blank">Accueil</a></li>
-                <li><a href="Tableu.html" target="_blank">Tableu</a> </li>
-                <li><a href="Contact.html" target="_blank">Contact</a> </li>
-            </ul>
-        </nav>
-        <img src="../HTML/jarditou_css/jarditou_html_zip/images/promotion.jpg" alt="promotion sur lames de terrasse" title="promotion sur lames de terrasse">
-    </header>
-    <main>
-    <h1>Tableau</h1>
-    <hr>
-    <table>
+        <div class="logo">
+         <img src="./jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo">
+         <h1> tout le jardin</h1>
+     </div>
+         <nav class="nav">
+             <ul>
+                 <li><a href="index.html" target="_blank">Accueil</a></li>
+                 <li><a href="Tableu.html" target="_blank">Tableu</a> </li>
+                 <li><a href="Contact.html" target="_blank">Contact</a> </li>
+             </ul>
+         </nav>
+         <img class="header-img" src="./jarditou_html_zip/images/promotion.jpg" alt="promotion sur lames de terrasse" title="promotion sur lames de terrasse">
+     </header>
+    <main class="main-tableau">
+    <h1 class="tableau">Tableau</h1>
+   
+    <table class="table">
         <thead>
             <tr>
             <th> Photo </th>
@@ -32,8 +34,8 @@
             <th> Prix </th>
             <th> Couleur </th>
         </tr> 
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr>
             <td><img src="../HTML/jarditou_html_zip/jarditou_photos/11.jpg" alt=""></td>
             <td> 11 Barbecues Clatronic </td>
@@ -64,19 +66,17 @@
             <td>49.00 €</td>
             <td >Green</td>
         </tr>
-       
-        
-            
+             
         </tbody>
     </table>
 </main>
-<hr>
-    <footer>
-        <ul>
-            <li><a href="#">Mention légales</a></li>
-            <li><a href="#">Horaires</a></li>
-            <li><a href="#">Plan du site</a></li>
-        </ul>
-    </footer>
+
+<footer class="footer">
+    <ul>
+        <li><a href="#">Mention légales</a></li>
+        <li><a href="#">Horaires</a></li>
+        <li><a href="#">Plan du site</a></li>
+    </ul>
+</footer>
 </body>
 </html>
