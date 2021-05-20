@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>PAGE CONTACT</title>
-  
+    <title>Contact</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
     <header>
-        <div>
-         <img src="./jarditou_html_zip/images/jarditou_logo.jpg"width="300px" alt="jarditou_logo" title="jarditou_logo">
-         <p>La qualité depuis 70 ans</p>
+        <div class="logo">
+         <img src="./jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo">
+         
      </div>
-         <nav>
-            <ul>
-                <li><a href="index.html" >Accueil</a></li>
-                <li><a href="Tableu.html" >Tableu</a> </li>
-                <li><a href="Contact.html" >Contact</a> </li>
-            </ul>
+         <nav class="nav">
+             <ul>
+                 <li><a href="index.html" target="_blank">Accueil</a></li>
+                 <li><a href="Tableu.html" target="_blank">Tableu</a> </li>
+                 <li><a href="Contact.html" target="_blank">Contact</a> </li>
+             </ul>
          </nav>
-         <img src="./jarditou_html_zip/images/promotion.jpg" width="100%" alt="promotion sur lames de terrasse" title="promotion sur lames de terrasse">
+         <img class="header-img" src="./jarditou_html_zip/images/promotion.jpg" alt="promotion sur lames de terrasse" title="promotion sur lames de terrasse">
      </header>
-    <main>
+    <main class="main-contact">
         <h1>Contact</h1>
-        <hr>
+        
     <p>* Ces zones sont obligatoires</p>
     <form action="http://bienvu.net/script.php" method="GET">
     <fieldset>
        <legend>Vos coordonnés</legend>
     <label for="name">Votre nom* : </label>
-        <input  type="text" id="name" name="nom" required> 
-    <br>
+        <input class="name" type="text" id="name" name="nom" required> 
+    
    
     <label for="prénom">Votre prénom* :  </label>
-    <input type="text" id="prénom" name="prenom" required>
+    <input class="prenom" type="text" id="prénom" name="prenom" required>
     <br>
-     <label >Sexe*:</label>
+     
     <label > Féminin<input class="input-radio" type="radio"  name="sexe" value="Féminin"></label>
     <label > Masculin<input class="input-radio"  type="radio"  name="sexe" value="Masculin"></label>
     
     <br><br>
     <label for="Data">Date de naissance* : </label>
-    <input  type="date" id="Data" name="data" value="" required><br>
+    <input class="date" type="date" id="Data" name="data" value="" required><br>
    
        <label for="number" >Code postal* :</label> <input id="number" class="number" type="number" name="CP" required><br>
-       <label >Adresse : <input  type="text" name="Adresse"></label><br>
-       <label >ville : <input  type="text" name="ville"></label><br>
-       <label >email* : <input  type="email" name="email" placeholder="dave.loper@afpa.fr" required></label><br>
+       <label >Adresse : <input class="adresse" type="text" name="Adresse"></label><br>
+       <label >ville : <input class="ville" type="text" name="ville"></label><br>
+       <label >email* : <input class="email" type="email" name="email" placeholder="dave.loper@afpa.fr" required></label><br>
    </fieldset>
    <br><br>
    <fieldset>
@@ -55,7 +55,7 @@
            Votre demande
        </legend>
        <label for="Sujet">Sujet*</label>
-       <select  id="Sujet" name="sujet" >
+       <select class="sujet" id="Sujet" name="sujet" >
         <option value="" selected disabled >veulliez séléctionner un Sujet</option>
         <option value="Mes commandes">Mes commandes</option>
         <option value="Question sur le produit">Question sur le produit</option>
@@ -70,18 +70,18 @@
 
    </fieldset>
 <br>
-<div>
-   <label ><input class="input-checkbox" type="checkbox" id="accepter" required>*j'accepte le traitement informatique de ce formulaire</label>
+<div class="submition">
+   <label >j'accepte le traitement informatique de ce formulaire*<input class="input-checkbox" type="checkbox" id="accepter" required></label>
    <br>
    <br>
-   <button  type="submit" value="">Envoyer</button>
-   <button  type="reset" value="annuler">annuler</button>
+   <button class="submit" type="submit" value="">Envoyer</button>
+   <button class="exit" type="reset" value="annuler">annuler</button>
 </div>
 </form>
-<hr>
+
 
 </main>
-<footer>
+<footer class="footer">
     <ul>
         <li><a href="#">Mention légales</a></li>
         <li><a href="#">Horaires</a></li>
