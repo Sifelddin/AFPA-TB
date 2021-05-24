@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <div class="d-lg-flex justify-content-between align-items-center  d-none ">
-        <img class="w-25 p-3" src="./jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo">
-        <h1 class="fw-bold h1 display-4 text-end mr-5 "> tout le jardin</h1>
+    <div class="d-lg-flex justify-content-between align-items-center  d-none p-0 ">
+        <img class="img-responsive img-fluid w-25 p-2" src="./jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo">
+        <h1 class=" h1 display-4.5 text-end  "> La qualité depuis 70 ans</h1>
     </div>
     <nav class="navbar navbar-expand-md navbar-light  bg-light">
         <a class="navbar-brand text-dark" href="#">jarditou.com</a>
@@ -20,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link text-dark" href="#">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark" href="index.html">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Tableau</a>
+              <a class="nav-link text-muted" href="Tableau.html">Tableau</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Contact</a>
+              <a class="nav-link text-muted" href="Contact.html">Contact</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
@@ -34,41 +34,62 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
           </form>
         </div>
-      </nav>   
-    <main class="main-contact">
-        <h1>Contact</h1>
+    </nav>  
+      <img class="img-responsive img-fluid  w-100 p-0" src="./jarditou_html_zip/images/promotion.jpg" alt="photo de promotion">
+ 
+    <main class="container-fluid">
+        
         
     <p>* Ces zones sont obligatoires</p>
     <form action="http://bienvu.net/script.php" method="GET">
-    <fieldset>
-       <legend>Vos coordonnés</legend>
+        
+   
+       <legend class="h3 ">Vos coordonnées</legend>
+       <div class="form-group">
     <label for="name">Votre nom* : </label>
-        <input class="name" type="text" id="name" name="nom" required> 
-    
-   
+        <input class="form-control" type="text" id="name" name="nom" required> 
+    </div>
+   <div class="form-group">
     <label for="prénom">Votre prénom* :  </label>
-    <input class="prenom" type="text" id="prénom" name="prenom" required>
-    <br>
-     
-    <label > Féminin<input class="input-radio" type="radio"  name="sexe" value="Féminin"></label>
-    <label > Masculin<input class="input-radio"  type="radio"  name="sexe" value="Masculin"></label>
-    
-    <br><br>
-    <label for="Data">Date de naissance* : </label>
-    <input class="date" type="date" id="Data" name="data" value="" required><br>
+    <input class="form-control" type="text" id="prénom" name="prenom" required>
+</div>
+<label class="form-check-label" >Sexe* :</label>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" id="f" type="radio"  name="sexe" value="Féminin">
+        <label for="f" class="form-check-label" > Féminin</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input id="m" class="form-check-input"  type="radio"  name="sexe" value="Masculin">
+        <label for="m" class="form-check-label" > Masculin</label>
+    </div>
+    <div class="form-group mt-4">
+        <label for="Data">Date de naissance* : </label>
+        <input class="form-control" type="date" id="Data" name="data" value="" required>
+   </div>
+   <div class="form-group">
+       <label for="number" >Code postal* :</label>
+        <input id="number" class="form-control" type="number" name="CP" required>
+ </div> 
    
-       <label for="number" >Code postal* :</label> <input id="number" class="number" type="number" name="CP" required><br>
-       <label >Adresse : <input class="adresse" type="text" name="Adresse"></label><br>
-       <label >ville : <input class="ville" type="text" name="ville"></label><br>
-       <label >email* : <input class="email" type="email" name="email" placeholder="dave.loper@afpa.fr" required></label><br>
-   </fieldset>
-   <br><br>
-   <fieldset>
-       <legend>
+     <div class="form-group">
+         <label for="adresse" >Adresse : </label>
+         <input id="adresse" class="form-control" type="text" name="Adresse">
+     </div>
+     <div class="form-group">
+         <label for="ville" >Ville : </label>
+         <input id="ville" class="form-control" type="text" name="ville">
+     </div>
+      <div class="form-group">
+          <label for="email" >Email* :</label>
+          <input id="email" class="form-control" type="email" name="email" placeholder="dave.loper@afpa.fr" required>
+     </div>
+   
+   
+       <legend class="h3">
            Votre demande
        </legend>
        <label for="Sujet">Sujet*</label>
-       <select class="sujet" id="Sujet" name="sujet" >
+       <select class="custom-select mb-3" id="Sujet" name="sujet" >
         <option value="" selected disabled >veulliez séléctionner un Sujet</option>
         <option value="Mes commandes">Mes commandes</option>
         <option value="Question sur le produit">Question sur le produit</option>
@@ -77,19 +98,19 @@
        </select>
        <br>
        <label for="cumments">Votre question* : </label>
-       <textarea id="cumments" name="cumments"
+       <textarea class="form-control" id="cumments" name="cumments"
           rows="3" cols="33">
 </textarea>
 
    </fieldset>
 <br>
-<div class="submition">
-   <label >j'accepte le traitement informatique de ce formulaire*<input class="input-checkbox" type="checkbox" id="accepter" required></label>
+ <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">j'accepte le traitement informatique de ce formulaire*</label>
+  </div>
    <br>
-   <br>
-   <button class="submit" type="submit" value="">Envoyer</button>
-   <button class="exit" type="reset" value="annuler">annuler</button>
-</div>
+   <button class="btn btn-dark mb-4" type="submit" value="">Envoyer</button>
+   <button class="btn btn-dark mb-4" type="reset" value="annuler">Annuler</button>
 </form>
 
 
