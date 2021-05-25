@@ -215,10 +215,11 @@ label {
         margin: 5px  10px;
     }
     /*page tabeleau*/
-    .table img{
-        
-        width: 100px;
-            
+    .tableau{
+        padding-left: 10px;
+    }
+    .table img{  
+        width: 100px;      
     }
     /*page Contact*/
     .main-contact h1{
