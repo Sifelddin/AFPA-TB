@@ -46,4 +46,5 @@ let bigNumbersInArrays = (arr) => {
     return newarr
 }
 
-console.log(bigNumbersInArrays([[4,5,1,3],[13,27,18,26],[32,35,37,39]]))
+console.log(bigNumbersInArrays([[4,5,1,3],[13,27,18,26],[32,35,37,39]]));
+console.log('hello world');
