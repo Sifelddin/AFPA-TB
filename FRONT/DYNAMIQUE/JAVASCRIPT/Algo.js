@@ -450,20 +450,29 @@
 //Exercice 5.9
 
 
-let prixAchats = parseInt(prompt("rentrez la suite des prix :"),10) ;
-let prixArticles = 0;
-let sommeRendre = 0;
 
-while(prixAchats !== 0){
-    prixArticles += prixAchats;
-    prixAchats = parseInt(prompt("rentrez la suite des prix :"),10)
-    console.log(prixArticles);
-}
-alert("le prix de tous les articles " + prixArticles + " €")
 
-let sommePaye = parseInt(prompt("rentrez une somme pour payer  :"),10) ;
+// let prixAchats = parseInt(prompt("rentrez la suite des prix :"),10) ;
+// let prixArticles = 0;
+// let sommeRendre = 0;
 
-sommeRendre = sommePaye - prixArticles;
+// while(prixAchats !== 0){
+//     prixArticles += prixAchats;
+//     prixAchats = parseInt(prompt("rentrez la suite des prix :"),10)
+//     console.log(prixArticles);
+// }
+// alert("le prix de tous les articles " + prixArticles + " €")
 
-alert("la remise de la monnaie à rendre " + sommeRendre + " €");
+// let sommePaye = parseInt(prompt("rentrez une somme pour payer  :"),10) ;
+
+// sommeRendre = sommePaye - prixArticles;
+
+// alert("la remise de la monnaie à rendre " + sommeRendre + " €");
+
+
+
+
+
+
+//Exercice 5.10
 

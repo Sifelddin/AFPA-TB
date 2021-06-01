@@ -1,50 +1,239 @@
 
 
 
-let convertToF = (celsius) => {
-    let fahrenheit = 0; 
-    fahrenheit = celsius * 9/5 + 32;
-    return fahrenheit;
-}
+// let convertToF = (celsius) => {
+//     let fahrenheit = 0; 
+//     fahrenheit = celsius * 9/5 + 32;
+//     return fahrenheit;
+// }
 
 
 
-let reverseString = (str) => {
-    let newStr = "";
-   newStr = str.split("").reverse().join("");
-    return newStr
-}
+// let reverseString = (str) => {
+//     let newStr = "";
+//    newStr = str.split("").reverse().join("");
+//     return newStr
+// }
 
 
 
-function factNum(num){
-  if(num === 0){
-      return 1;
-  }  
-  return num * factNum(num - 1 );
+// function factNum(num){
+//   if(num === 0){
+//       return 1;
+//   }  
+//   return num * factNum(num - 1 );
 
-}
+// }
 
-let findTheLongestWordlength = (sentence) => {
-    let newstr = sentence.split(' ');
-    let maxlength = 0; 
-    for(let i = 0; i < newstr.length ; i++){
-        if(newstr[i].length > maxlength){
-            maxlength = newstr[i].length
-        }
+// let findTheLongestWordlength = (sentence) => {
+//     let newstr = sentence.split(' ');
+//     let maxlength = 0; 
+//     for(let i = 0; i < newstr.length ; i++){
+//         if(newstr[i].length > maxlength){
+//             maxlength = newstr[i].length
+//         }
 
-    }
-   return maxlength
+//     }
+//    return maxlength
 
-}
+// }
 
-let bigNumbersInArrays = (arr) => {
-    let newarr = [];
-    for(let i = 0; i < arr.length; i++){
-       newarr.push(arr[i].reduce((current, prev) => current > prev ))
-    }
-    return newarr
-}
+// let bigNumbersInArrays = (arr) => {
+//     let newarr = [];
+//     for(let i = 0; i < arr.length; i++){
+//        newarr.push(arr[i].reduce((current, prev) => current > prev ))
+//     }
+//     return newarr
+// }
 
-console.log(bigNumbersInArrays([[4,5,1,3],[13,27,18,26],[32,35,37,39]]));
-console.log('hello world');
+// console.log(bigNumbersInArrays([[4,5,1,3],[13,27,18,26],[32,35,37,39]]));
+// console.log('hello world');
+
+
+
+//JS 07 : Instructions conditionnelles et alternatives 
+
+
+//Exercice 1 - Parité
+// let entrerNombre = parseInt(prompt("entrez un chiffre  :"), 10);
+// (entrerNombre % 2 == 0)? alert("le nombre paire") : alert("le nombre est impair");
+   
+
+
+//Exercice 2 - Age
+// let age = prompt("entrez votre age :");
+// (age < 18)? alert("vous êtes mineur ") : alert("vous êtes majeur");
+
+
+
+
+//Exercice 3 - Calculette
+
+// let saisiNb1 = prompt("saisi le premeier nombre :");
+// let saisiNb2 = prompt("saisi le deuxième nombre :");
+// let Opérateur = prompt("saisi un de ces opérateur (+ , - , * , /) ");
+
+// console.log(saisiNb1 + " " + saisiNb2 + " " + Opérateur);
+// console.log(typeof(saisiNb2));
+// console.log(typeof(saisiNb1));
+
+// if(Opérateur == "+" ){
+//     saisiNb2 = parseInt(saisiNb2, 10);
+//     saisiNb1 = parseInt(saisiNb1, 10);
+    
+//     alert(saisiNb1 + saisiNb2);
+
+//     }else if(Opérateur == "-" ){
+//         alert(saisiNb1 - saisiNb2);
+
+//     }else if(Opérateur == "*" ){
+//         alert(saisiNb1 * saisiNb2);
+
+//     }else if(Opérateur == "/" && saisiNb2 != 0 ){
+//         alert(saisiNb1 / saisiNb2);
+
+//     }
+
+// else{
+//     alert("c'est pas le bon opérateur ou bien d'erreur division par 0")
+// }
+
+
+
+
+
+//JS 08 : Les boucles
+//Exercice 1 - Saisie
+
+// let prenome = prompt("saisissez le prénom :");
+// let i = 0;
+// while(prenome != null){
+//     console.log(prenome + " " + i++);
+//     prenome = prompt("saisissez le prénom :");
+// }
+
+
+
+
+
+//Exercice 2 - Entiers inférieurs à N
+
+// function trouverNombresInférieurs (N){
+
+//     while (N > 0){
+
+//         N--;
+       
+//         console.log(N);
+//     }
+//  return N;
+// }
+
+// let res = trouverNombresInférieurs(10);
+// console.log(res);
+
+
+
+
+
+//Exercice 4 - Multiples
+
+// let N =parseInt(prompt("saisi le  nombre N:"), 10);
+// let X =parseInt(prompt("saisi le  nombre X:"), 10);
+
+// while(N > 0){
+//     if(N == 0){
+//         break;
+//     }
+//     console.log( N + " x " + X + " = " + N*X);
+//     N--;
+    
+// }
+
+
+
+
+//Exercice 5 - Nombre de voyelles.
+
+// let mot = prompt("entrez un mot :");
+// let voyellesN = 0;
+
+// let regEXp = /[aeiuo]/ig
+// let matched = mot.match(regEXp);
+// console.log(matched);
+
+
+// for(let i = 0; i < matched.length ; i++){
+//     voyellesN++;
+// }
+// document.write("<h1>" + voyellesN + "</h1>")
+
+
+
+
+
+
+
+
+//JS 09 : Fonctions
+
+// //Exercice 1
+//  let numx = prompt("chiffre x :" )
+//  let numy = prompt("chiffre y :" )
+
+// function produit (x, y){
+// return x * y;
+// }
+
+//  function cube(numx){
+//     return numx**2;
+// }
+
+// function afficheImg(image){
+//   return  document.write(image);
+// }
+
+// afficheImg("<img src=\"https://ncode.amorce.org/ressources/Pool/TB/WEB_Javascript_BASES/images/papillon.jpg\"><br>")
+
+// document.write(" <p>Le cube de "+ numx + " est égal à " + cube(numx) + "</p>")
+// document.write(" <p>Le produit de "+ numx + " X " + numy + " est égal à "+ produit(numx, numy) +"</p>")
+
+
+
+
+
+
+//Exercice 2 - String Token
+
+// function strTok(str1, str2, n){
+
+//  let str2Instr1 = str1.split(" ").join(str2);
+//  console.log(str2Instr1);
+//  let arr = str1.split(" ");
+//  return arr[n - 1];
+// }
+
+// console.log(strTok( "robert dupont amiens 80000" , ";" , 3))
+
+
+
+
+
+
+
+
+//JS 10 : Tableaux
+//Exercice 1
+
+// let Tableau = [];
+
+// let TailleTableau = parseInt(prompt("saisi la taille de tableau"), 10);
+// let i = 0 ;
+// while(i < TailleTableau){
+//  let valeur = prompt('entrez une valeur dans le tableau');  
+//  Tableau.push(valeur);
+
+//  i++;
+// }
+
+// console.log(Tableau);
