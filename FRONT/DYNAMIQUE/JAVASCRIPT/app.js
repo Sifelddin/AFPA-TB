@@ -102,15 +102,20 @@
 
 
 
-//JS 08 : Les boucles
-//Exercice 1 - Saisie
+// JS 08 : Les boucles
+// Exercice 1 - Saisie
 
 // let prenome = prompt("saisissez le prénom :");
-// let i = 0;
+// let nomberPrenom = 0;
 // while(prenome != null){
-//     console.log(prenome + " " + i++);
+//     console.log(prenome);
+//     nomberPrenom++;
 //     prenome = prompt("saisissez le prénom :");
 // }
+
+// console.log("le nombre des prénomes :"+ nomberPrenom);
+
+
 
 
 
@@ -136,6 +141,40 @@
 
 
 
+//Exercice 3 - Moyenne
+
+// let somme = 0;
+// let moyenne = 0;
+// let saisiEntier = parseInt(prompt("saisi des chiffres :"),10);  
+
+// let i = 0;  
+// //
+// if(Number.isInteger(saisiEntier)){
+// while(saisiEntier != 0){
+    
+//     somme += saisiEntier;
+//     i++;
+//     moyenne = somme / i;
+//     if(Number.isInteger(saisiEntier))  {
+//     saisiEntier = parseInt(prompt("saisi des entiers :"),10);  
+//     }else{
+//         alert("ce n'est pas un chiffre");
+//         break;
+//     }
+// }
+// document.write("<h1> la somme est :" + somme + "</h1>")
+// document.write("<h1> la somme est :" + moyenne + "</h1>")
+
+// }
+// else{
+//     alert("ce n'est pas un chiffre"); 
+//     }
+
+
+
+
+
+
 //Exercice 4 - Multiples
 
 // let N =parseInt(prompt("saisi le  nombre N:"), 10);
@@ -153,12 +192,14 @@
 
 
 
-//Exercice 5 - Nombre de voyelles.
+
+
+// Exercice 5 - Nombre de voyelles.
 
 // let mot = prompt("entrez un mot :");
 // let voyellesN = 0;
 
-// let regEXp = /[aeiuo]/ig
+// let regEXp = /[aeiuoy]/ig
 // let matched = mot.match(regEXp);
 // console.log(matched);
 
@@ -166,12 +207,40 @@
 // for(let i = 0; i < matched.length ; i++){
 //     voyellesN++;
 // }
-// document.write("<h1>" + voyellesN + "</h1>")
+// document.write("<h1> nomber des voyellesN:  " + voyellesN + "</h1>")
+
+//Exercice 5 
+
+// let mot = prompt("saisissez un mot : ").toLocaleLowerCase();
+// let voyellesNombre ;
+// let voyelles = "";
+// for(let i = 0; i < mot.length; i++){
+//  if( mot[i] == "i" || mot[i] == "a" ||mot[i] == "e" ||mot[i] == "y" ||mot[i] == "o" ||mot[i] == "u" ){
+//  voyelles +=  mot.substr(mot.indexOf(mot[i]), 1) ;
+// }
+// }
+// voyellesNombre = voyelles.length;
+// console.log(voyellesNombre);
+
+
+
+
+// let mot = prompt("saisissez un mot : ").toLocaleLowerCase();
+// let voyellesNum = 0;
+// for(let i = 0; i < mot.length; i++){
+//   if( mot[i] == "i" || mot[i] == "a" || mot[i] == "e" ||mot[i] == "y" ||  mot[i] == "o" ||mot[i] == "u" ){
+// voyellesNum++
+//   }
+// }
+// console.log(voyellesNum);
 
 
 
 
 
+//  
+// 
+//   
 
 
 
@@ -205,11 +274,12 @@
 
 //Exercice 2 - String Token
 
-// function strTok(str1, str2, n){
+//function strTok(str1, str2, n){
 
 //  let str2Instr1 = str1.split(" ").join(str2);
-//  console.log(str2Instr1);
+//  document.write("<h1>la phrase est :  " +str2Instr1 + "</h1>");
 //  let arr = str1.split(" ");
+//  document.write("<h1> le nieme mot est : " + arr[n - 1] + "</h1>") ;
 //  return arr[n - 1];
 // }
 
@@ -222,8 +292,8 @@
 
 
 
-//JS 10 : Tableaux
-//Exercice 1
+// JS 10 : Tableaux
+// Exercice 1
 
 // let Tableau = [];
 
@@ -231,9 +301,68 @@
 // let i = 0 ;
 // while(i < TailleTableau){
 //  let valeur = prompt('entrez une valeur dans le tableau');  
-//  Tableau.push(valeur);
+//  Tableau.push(valeur);   
 
 //  i++;
 // }
 
-// console.log(Tableau);
+// document.write("<h1>Le tableau :" + Tableau + "</h1>");
+
+
+//Exercise 2
+
+// function GetInteger(){
+//  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
+//   if(Number.isInteger(num)){
+//       return num;
+//   }else{
+//       alert("ce n'est pas un entier");
+//   }
+// }
+
+//  function initTab(){
+//     let array = new Array(GetInteger());
+//     return array;
+// }
+
+// function SaisieTab(arr){
+//     for(let i = 0 ; i < arr.length ; i++){
+//  arr[i]= parseInt(prompt("saisir des postes dans tableau :"),10);
+//    }
+//  return arr
+// }
+// const tableau = SaisieTab(initTab());
+
+// function AfficheTab(){
+    
+//      document.write("<h1>l'affichage de tous les postes du tableau:  [" +  tableau + "]</h1>")
+
+// }
+// AfficheTab();
+
+// function RechercheTab(){
+//     let rang =parseInt(prompt("saisir le rang d'un poste pour afficher son contenu :"))
+    
+//     if(Number.isInteger(rang)){
+//       return  console.log(tableau[rang]) 
+//     }
+//      return   alert("c'est pas un chiffre")
+    
+
+// }
+
+// RechercheTab()
+
+
+// function InfoTab(arr){
+// let count = 0;
+//     for(let i = 0 ; i < arr.length; i++){
+//         count += arr[i];
+//     }
+ 
+//  document.write("<br><h1> la moyenne des postes :" + count/arr.length + "</h1>") ;
+//  document.write("<br><h1>le maximum des postes :" + Math.max(...tableau)+ "</h1>") ;
+
+// }
+
+// InfoTab(tableau);
