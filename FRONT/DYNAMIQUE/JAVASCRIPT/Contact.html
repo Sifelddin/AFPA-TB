@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>page Contact</title>
+</head>
+<body>
+    <div class="header">
+    <h1>Vos coordonnées :</h1>
+    <h2>*Ces zones sont obligatoires pour envoyer le formulaire .</h2>
+    </div>
+    <form class="form" action="" method="POST">
+        <label for="soci">Société :</label>
+        <input type="text" id="soci" name="société" value="" required>
+        <label for="percontact">Personne à contacter :</label>
+        <input type="text" id="percontact" name="contacter-Personne" value="" required>
+        <label for="adresse">Adresse de l'entreprise :</label>
+        <input type="text" id="adresse" name="adresse" value="" required>
+        <label for="CP">Code Postal :</label>
+        <input type="number" id="CP" name="code-postal " value="" required>
+
+  
+        <label for="ville">Ville :</label>
+        <input type="text" id="ville" name="ville" value="" required>
+        <label for="email">E-mail : </label>
+        <input type="email" id="email" name="Email" value="" required>
+        <label for="tel">Téléphone :</label>
+        <input type="number" id="tel" name="société" value="">
+        <label for="comment">Sélectionnez l'environnement technique du projet</label>
+        <textarea id="comment"></textarea>
+        <select  id="Sujet" name="sujet" >
+        <option value="" selected disabled >Veulliez séléctionner un Sujet</option>
+        <option value="Mes commandes">Mes commandes</option>
+        <option value="Question sur le produit">Question sur le produit</option>
+        <option value="Réclamation">Réclamation</option>
+        <option value="Autre">Autre</option>
+        </select>
+        <button class="submit" type="submit" value="">Envoyer</button>
+        <button class="exit" type="reset" value="annuler">annuler</button>
+    </form>
+    <script src="./form.js"></script>
+</body>
+</html>

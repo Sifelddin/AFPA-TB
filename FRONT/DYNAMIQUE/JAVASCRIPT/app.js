@@ -366,3 +366,17 @@
 // }
 
 // InfoTab(tableau);
+
+
+
+//Exercice 3 : Tri d’un tableau
+
+
+// let tableau = ["ali", 'sifou', "hamid", "pierre", "good" , "day" , "ali"]
+// function sorting(arr){
+//  return arr.sort((a, b) => (a === b)? 0 : a > b ? 1 : -1
+  
+//   );
+// }
+// console.log(sorting(tableau));
+
