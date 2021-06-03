@@ -1,33 +1,62 @@
-html , body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.header{
-    padding: 0 30px;
-}
-
-h2{
-    color: brown;
+.header {
+  padding: 0 30px;
 }
 
-.form{
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-   
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-textarea{
- width: 70%;
-}
-input, select, button{
-    padding: 8px;
-    margin: 10px 0;
+h2 {
+  color: brown;
 }
 
-button, select{
-    cursor: pointer;
+.form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+textarea {
+  width: 70%;
+}
+input,
+select,
+button {
+  padding: 8px;
+  margin: 10px 0;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+.submit {
+  color: antiquewhite;
+  background: #37af65;
+}
+.exit {
+  color: white;
+  background: rgb(155, 30, 30);
+}
+.exit:hover {
+  color: rgb(155, 30, 30);
+  background: gainsboro;
+  transition: 0.2s;
+}
+.submit:hover {
+  color: #37af65;
+  background: rgb(207, 206, 206);
+  transition: 0.2s;
+}
+button {
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
