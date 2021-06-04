@@ -285,7 +285,19 @@
 
 // console.log(strTok( "robert dupont amiens 80000" , ";" , 3))
 
+//Exercice 2 - String Token - 2
+// let string = "robert dupont amiens 80000";
 
+
+// function strtok(str1,str2,n){
+//     let count = 0;
+//  let newStr = str1.replaceAll(" ", str2).split(";")[n-1];
+ 
+//    return newStr;
+
+// }
+
+// console.log(strtok(string,";",3 ));
 
 
 
@@ -311,6 +323,7 @@
 
 //Exercise 2
 
+// //une fonction GetInteger pour lire un entier au clavier,
 // function GetInteger(){
 //  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
 //   if(Number.isInteger(num)){
@@ -320,30 +333,45 @@
 //   }
 // }
 
-//  function initTab(){
-//     let array = new Array(GetInteger());
-//     return array;
-// }
+//  let number = GetInteger();
 
+
+// //une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
+//  function initTab(){
+//      if(Number.isInteger(number)){
+//     let array = new Array(number);
+//     return array;
+// }else{ 
+//    return null;
+// }
+   
+// }
+// try{
+// //une fonction SaisieTab pour permettre la saisie des différents postes du tableau,
 // function SaisieTab(arr){
 //     for(let i = 0 ; i < arr.length ; i++){
 //  arr[i]= parseInt(prompt("saisir des postes dans tableau :"),10);
 //    }
 //  return arr
 // }
+
 // const tableau = SaisieTab(initTab());
 
+
+// //une fonction AfficheTab pour afficher tous les postes du tableau,
 // function AfficheTab(){
     
 //      document.write("<h1>l'affichage de tous les postes du tableau:  [" +  tableau + "]</h1>")
 
 // }
-// AfficheTab();
 
+
+// //une fonction RechercheTab pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
 // function RechercheTab(){
 //     let rang =parseInt(prompt("saisir le rang d'un poste pour afficher son contenu :"))
     
 //     if(Number.isInteger(rang)){
+//       document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :" +  + tableau[rang] + "</h1>") ;
 //       return  console.log(tableau[rang]) 
 //     }
 //      return   alert("c'est pas un chiffre")
@@ -351,9 +379,9 @@
 
 // }
 
-// RechercheTab()
 
 
+// //une fonction InfoTab qui affichera le maximum et la moyenne des postes.
 // function InfoTab(arr){
 // let count = 0;
 //     for(let i = 0 ; i < arr.length; i++){
@@ -365,7 +393,14 @@
 
 // }
 
+// AfficheTab();
+// RechercheTab()
 // InfoTab(tableau);
+
+// }catch {
+//     alert('il faut rentrer un chiffre pour continuer !')
+// }
+
 
 
 

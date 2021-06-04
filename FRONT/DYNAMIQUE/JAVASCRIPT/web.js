@@ -1,4 +1,6 @@
 
+//JS 13 : Les objets natifs
+
 // function sommeMoyenneValsSaisi(){
 
 //     let tableau = [];
@@ -35,7 +37,6 @@
 // btn.addEventListener("click",()=>{
 //     alert("wow j'ai réussi")
 // })
-
 
 // const img = document.querySelector("img");
 

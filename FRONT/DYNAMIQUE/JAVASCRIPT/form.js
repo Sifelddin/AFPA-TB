@@ -4,7 +4,9 @@ const codeP = document.getElementById('CP');
 const ville = document.getElementById("ville");
 const email = document.getElementById("email");
 const form = document.getElementById("form");
-
+const select = document.getElementById('Sujet');
+const textarea = document.getElementById('textarea');
+console.log(select.childNodes);
 form.addEventListener('submit',(e)=>{
     let messages = [];
     if(societe.value == "" || societe.value == null){
