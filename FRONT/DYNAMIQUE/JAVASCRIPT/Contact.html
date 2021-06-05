@@ -12,26 +12,25 @@
     <h1>Vos coordonnées :</h1>
     <h2>*Ces zones sont obligatoires pour envoyer le formulaire .</h2>
     </div>
-    <form id="form" class="form" action="" method="POST">
+    <form id="form" class="form" action="" method="GET">
         <label for="soci">Société :</label>
-        <input type="text" id="soci" name="société" value="" >
+        <input type="text" id="soci" name="société"  >
         <label for="percontact">Personne à contacter :</label>
-        <input type="text" id="percontact" name="contacter-Personne" value="" >
+        <input type="text" id="percontact" name="contacter-Personne" >
         <label for="adresse">Adresse de l'entreprise :</label>
-        <input type="text" id="adresse" name="adresse" value="" >
+       <textarea name="Adresse-de-l'entreprise" id="adresse" ></textarea> 
         <label for="CP">Code Postal :</label>
-        <input type="number" id="CP" name="code-postal " value="" >
-
-  
+        <input type="number" id="CP" name="code-postal "  >
         <label for="ville">Ville :</label>
-        <input type="text" id="ville" name="ville" value="" >
+        <input type="text" id="ville" name="ville" >
         <label for="email">E-mail : </label>
-        <input type="email" id="email" name="Email" value="" >
+        <input type="email" id="email" name="Email"  >
         <label for="tel">Téléphone :</label>
-        <input type="number" id="tel" name="société" value="">
-        <label for="comment">Sélectionnez l'environnement technique du projet</label>
-        <textarea  id="textarea"></textarea>
-        <select  id="Sujet" name="sujet" >
+        <input type="number" id="tel" name="société">
+        <label >Sélectionnez l'environnement technique du projet :
+        <textarea  id="textarea" name="environnementTechnique"></textarea>
+        <br>
+        <select  id="Sujet" name="select" >
         <option value="" selected disabled >Choisissez</option>
         <option value="Access">Access</option>
         <option value="Java">Java</option>
@@ -46,8 +45,8 @@
         <option value="SQL-Server">SQL-Server</option>
         <option value="Oracle">Oracle</option>
         <option value="Autres">Autres</option>
-
         </select>
+    </label>
         <button class="submit" type="submit" value="">Envoyer</button>
         <button class="exit" type="reset" value="annuler">Annuler</button>
     </form>
