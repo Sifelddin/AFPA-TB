@@ -336,6 +336,7 @@
 //  let number = GetInteger();
 
 
+
 // //une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
 //  function initTab(){
 //      if(Number.isInteger(number)){
@@ -400,6 +401,92 @@
 // }catch {
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
+
+//une fonction GetInteger pour lire un entier au clavier,
+let GetInteger =()=> {
+ let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
+  if(Number.isInteger(num)){
+      return num;
+  }else{
+      alert("ce n'est pas un entier");
+  }
+}
+const entier = GetInteger();
+
+//une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
+let initTab = (e) => {
+    let array = new Array(e);
+    return array; 
+}
+const tableauVide = initTab(entier);
+
+//une fonction SaisieTab pour permettre la saisie des différents postes du tableau,
+let SaisieTab = (arr) => {  
+     if(Number.isInteger(entier) ){    
+    for(let i = 0 ; i < arr.length ; i++){
+ arr[i]= parseInt(prompt("saisir des chiffres dans les postes dans tableau :"),10);
+   }
+ return arr
+}else{
+    return alert ("un chiffre svp")
+}
+}
+
+const tableau = SaisieTab(tableauVide);
+console.log(tableau);
+
+//une fonction AfficheTab pour afficher tous les postes du tableau,
+let AfficheTab = () =>{
+    if(Number.isInteger(entier)){ 
+        if(!tableau.includes(NaN)) {
+     document.write("<h1>l'affichage de tous les postes du tableau:  [" +  tableau + "]</h1>")
+    }else{
+    return alert('veuillez entrer des chiffres s,v,p')
+}
+}
+return null
+
+}
+
+
+//une fonction RechercheTab pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
+let RechercheTab = () =>{
+    if(Number.isInteger(entier) && !tableau.includes(NaN) ){ 
+    let rang =parseInt(prompt("saisir le rang d'un poste pour afficher son contenu :"))
+   
+    if(rang < tableau.length  ){
+      document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :" +  + tableau[rang] + "</h1>") ;
+      console.log(tableau[rang])  }else if(Number.isInteger(rang)){
+      
+        document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :"  + tableau[rang] + "</h1>")  }else{
+           return   alert(" un chiffre pour saisir le rang d'un poste !")
+        }
+
+      }
+      return   null
+    }
+//une fonction InfoTab qui affichera le maximum et la moyenne des postes.
+let InfoTab =(arr) =>{
+    if(Number.isInteger(entier) ){ 
+let count = 0;
+    for(let i = 0 ; i < arr.length; i++){
+        count += arr[i];
+    }
+ 
+ document.write("<br><h1> la moyenne des postes :" + count/arr.length + "</h1>") ;
+ document.write("<br><h1>le maximum des postes :" + Math.max(...tableau)+ "</h1>") ;
+
+}else{
+    return null
+}
+}
+AfficheTab();
+RechercheTab()
+InfoTab(tableau);
+
+
+  
+
 
 
 
