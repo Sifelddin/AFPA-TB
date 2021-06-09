@@ -402,87 +402,87 @@
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
 
-//une fonction GetInteger pour lire un entier au clavier,
-let GetInteger =()=> {
- let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
-  if(Number.isInteger(num)){
-      return num;
-  }else{
-      alert("ce n'est pas un entier");
-  }
-}
-const entier = GetInteger();
+// //une fonction GetInteger pour lire un entier au clavier,
+// let GetInteger =()=> {
+//  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
+//   if(Number.isInteger(num)){
+//       return num;
+//   }else{
+//       alert("ce n'est pas un entier");
+//   }
+// }
+// const entier = GetInteger();
 
-//une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
-let initTab = (e) => {
-    let array = new Array(e);
-    return array; 
-}
-const tableauVide = initTab(entier);
+// //une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
+// let initTab = (e) => {
+//     let array = new Array(e);
+//     return array; 
+// }
+// const tableauVide = initTab(entier);
 
-//une fonction SaisieTab pour permettre la saisie des différents postes du tableau,
-let SaisieTab = (arr) => {  
-     if(Number.isInteger(entier) ){    
-    for(let i = 0 ; i < arr.length ; i++){
- arr[i]= parseInt(prompt("saisir des chiffres dans les postes dans tableau :"),10);
-   }
- return arr
-}else{
-    return alert ("un chiffre svp")
-}
-}
+// //une fonction SaisieTab pour permettre la saisie des différents postes du tableau,
+// let SaisieTab = (arr) => {  
+//      if(Number.isInteger(entier) ){    
+//     for(let i = 0 ; i < arr.length ; i++){
+//  arr[i]= parseInt(prompt("saisir des chiffres dans les postes dans tableau :"),10);
+//    }
+//  return arr
+// }else{
+//     return alert ("un chiffre svp")
+// }
+// }
 
-const tableau = SaisieTab(tableauVide);
-console.log(tableau);
+// const tableau = SaisieTab(tableauVide);
+// console.log(tableau);
 
-//une fonction AfficheTab pour afficher tous les postes du tableau,
-let AfficheTab = () =>{
-    if(Number.isInteger(entier)){ 
-        if(!tableau.includes(NaN)) {
-     document.write("<h1>l'affichage de tous les postes du tableau:  [" +  tableau + "]</h1>")
-    }else{
-    return alert('veuillez entrer des chiffres s,v,p')
-}
-}
-return null
+// //une fonction AfficheTab pour afficher tous les postes du tableau,
+// let AfficheTab = () =>{
+//     if(Number.isInteger(entier)){ 
+//         if(!tableau.includes(NaN)) {
+//      document.write("<h1>l'affichage de tous les postes du tableau:  [" +  tableau + "]</h1>")
+//     }else{
+//     return alert('veuillez entrer des chiffres s,v,p')
+// }
+// }
+// return null
 
-}
+// }
 
 
-//une fonction RechercheTab pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
-let RechercheTab = () =>{
-    if(Number.isInteger(entier) && !tableau.includes(NaN) ){ 
-    let rang =parseInt(prompt("saisir le rang d'un poste pour afficher son contenu :"))
+// //une fonction RechercheTab pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
+// let RechercheTab = () =>{
+//     if(Number.isInteger(entier) && !tableau.includes(NaN) ){ 
+//     let rang =parseInt(prompt("saisir le rang d'un poste pour afficher son contenu :"))
    
-    if(rang < tableau.length  ){
-      document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :" +  + tableau[rang] + "</h1>") ;
-      console.log(tableau[rang])  }else if(Number.isInteger(rang)){
+//     if(rang < tableau.length  ){
+//       document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :" +  + tableau[rang] + "</h1>") ;
+//       console.log(tableau[rang])  }else if(Number.isInteger(rang)){
       
-        document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :"  + tableau[rang] + "</h1>")  }else{
-           return   alert(" un chiffre pour saisir le rang d'un poste !")
-        }
+//         document.write("<br><h1>  le contenu d’un poste  de tableau dont le index est  " + rang +" est :"  + tableau[rang] + "</h1>")  }else{
+//            return   alert(" un chiffre pour saisir le rang d'un poste !")
+//         }
 
-      }
-      return   null
-    }
-//une fonction InfoTab qui affichera le maximum et la moyenne des postes.
-let InfoTab =(arr) =>{
-    if(Number.isInteger(entier) ){ 
-let count = 0;
-    for(let i = 0 ; i < arr.length; i++){
-        count += arr[i];
-    }
+//       }
+//       return   null
+//     }
+// //une fonction InfoTab qui affichera le maximum et la moyenne des postes.
+// let InfoTab =(arr) =>{
+//     if(Number.isInteger(entier) ){ 
+// let count = 0;
+//     for(let i = 0 ; i < arr.length; i++){
+//         count += arr[i];
+//     }
  
- document.write("<br><h1> la moyenne des postes :" + count/arr.length + "</h1>") ;
- document.write("<br><h1>le maximum des postes :" + Math.max(...tableau)+ "</h1>") ;
+//  document.write("<br><h1> la moyenne des postes :" + count/arr.length + "</h1>") ;
+//  document.write("<br><h1>le maximum des postes :" + Math.max(...tableau)+ "</h1>") ;
 
-}else{
-    return null
-}
-}
-AfficheTab();
-RechercheTab()
-InfoTab(tableau);
+// }else{
+//     return null
+// }
+// }
+// AfficheTab();
+// RechercheTab()
+// InfoTab(tableau);
 
 
   
@@ -502,3 +502,65 @@ InfoTab(tableau);
 // }
 // console.log(sorting(tableau));
 
+
+
+
+
+
+
+
+
+
+//Evaluation Javascript pour les groupes TB
+
+//Exercice 1 - Calcul du nombre de jeunes, de moyens et de vieux
+
+// const allH1 = document.querySelectorAll('h1');
+// let SaisirAge =parseInt(prompt("veuillez rentrer un chiffre qui va représenter l'age une personne : "),10)
+// let tableau = [100];
+// let compteJeune = 0;
+// let compteMoyen = 0;
+// let compteVieux = 0;
+
+// while(SaisirAge != 100) {
+// if(SaisirAge > 0 && SaisirAge < 100){
+//     tableau.push(SaisirAge);
+// }
+//     SaisirAge = parseInt(prompt("veuillez rentrer un chiffre qui va représenter l'age une personne : "))
+// } 
+// for(let i = 0; i <tableau.length; i++){
+//     if(tableau[i] > 40 && tableau[i] <= 100){
+//     compteVieux++;
+// } else if(tableau[i] > 0 && tableau[i] < 20){
+//     compteJeune++;
+// }else if(tableau[i] >= 20 && tableau[i] <= 40){
+//     compteMoyen++;
+// }
+// }
+
+
+// allH1[0].innerText =allH1[0].textContent + compteJeune;
+// allH1[1].innerText =allH1[1].textContent + compteMoyen;
+// allH1[2].innerText =allH1[2].textContent + compteVieux;
+// console.log(compteVieux +"v");
+// console.log(compteJeune + "j");
+// console.log(compteMoyen +"m");
+// console.log(tableau);
+
+
+
+
+//Exercice 2 : Table de multiplication
+
+// let tableMultip = (num) => {
+//     let i = 0;
+//     let calcul = "";
+//     do{
+//    calcul +="<h1>" + i + " x " + num + " = " + i*num +"<br></h1>";
+//         i++;
+        
+//     }while(i <= 10);
+  
+// return document.write(calcul);
+// }
+// console.log(tableMultip(6));
