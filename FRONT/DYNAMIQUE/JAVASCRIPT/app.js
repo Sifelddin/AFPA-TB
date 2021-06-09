@@ -402,7 +402,11 @@
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
 
+<<<<<<< HEAD
 // //une fonction GetInteger pour lire un entier au clavier,
+=======
+//une fonction GetInteger pour lire un entier au clavier,
+>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
 // let GetInteger =()=> {
 //  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
 //   if(Number.isInteger(num)){
@@ -503,6 +507,7 @@
 // console.log(sorting(tableau));
 
 
+<<<<<<< HEAD
 
 
 
@@ -564,3 +569,67 @@
 // return document.write(calcul);
 // }
 // console.log(tableMultip(6));
+=======
+//Exercice 3 : recherche d'un prénom
+// const tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
+// console.log(tab);
+// let trouverPrenom = (arr) =>{
+//    let prenom = prompt('entrez un prénom S,V,P');
+  
+//     let result = [];
+//     if(arr.includes(prenom)){
+  
+//    arr.splice(arr.indexOf(prenom),1) ;
+//       result = [...arr];
+     
+//       result.push(" ");
+//       return result;
+      
+//     }else{
+//      console.log(arr);
+//      return   alert("le prenom que vous avez saisi n'existe pas !");
+//     }
+// }
+
+// console.log(trouverPrenom(tab));
+
+
+//Exercice 4 : total d'une commande
+
+
+// let PU = parseInt(prompt(" le  prix unitaire :"),10);
+// let QTECOM = parseInt(prompt(" la quantité commandée :"),10);
+
+
+// let PAP = (prixU, QT ) => {
+//     let prixPayer = 0;
+//     let  REM = 0;
+//     let  PORT = 6;
+//     let ToT = 0;
+
+//     ToT = prixU * QT;
+//     if(ToT >= 100 && ToT <= 200){
+//         REM = ToT * 5/100;
+//         ToT -= REM;   
+//     }else if(ToT > 200){
+//         REM = ToT * 10/100;
+//         ToT -= REM; 
+//         if(ToT > 500){
+//             PORT = 0;
+//         }else if(ToT > 300){
+//             PORT = ToT * 2/100;
+           
+//         }
+//     }
+// return prixPayer = ToT + PORT + " €";
+// }
+// console.log(PAP(600,1))
+// console.log(PAP(501,1))
+// console.log(PAP(100,2))
+// console.log(PAP(3,1))
+
+
+//Exercice 5 : vérification d'un formulaire
+
+
+>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
