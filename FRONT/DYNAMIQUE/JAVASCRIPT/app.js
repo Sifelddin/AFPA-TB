@@ -402,11 +402,11 @@
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
 
-<<<<<<< HEAD
-// //une fonction GetInteger pour lire un entier au clavier,
-=======
+
 //une fonction GetInteger pour lire un entier au clavier,
->>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
+
+//une fonction GetInteger pour lire un entier au clavier 2èm méthode,
+
 // let GetInteger =()=> {
 //  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
 //   if(Number.isInteger(num)){
@@ -484,10 +484,16 @@
 //     return null
 // }
 // }
-// AfficheTab();
-// RechercheTab()
-// InfoTab(tableau);
-
+// if(Number.isInteger(entier) && !tableau.includes(NaN)){
+// let menu = prompt('afficher le contenu de tableau taper : 1\n saisir un chiffre pour\'afficher le rang  taper : 2\n afficher la moyenne et le maximum  : 3');
+// if(menu == 1){
+//    AfficheTab(); 
+// }else if(menu == 2){
+//     RechercheTab()
+// }else if( menu == 3){
+//     InfoTab(tableau);
+// }
+// }
 
   
 
@@ -507,7 +513,7 @@
 // console.log(sorting(tableau));
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -569,7 +575,7 @@
 // return document.write(calcul);
 // }
 // console.log(tableMultip(6));
-=======
+
 //Exercice 3 : recherche d'un prénom
 // const tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
 // console.log(tab);
@@ -632,4 +638,4 @@
 //Exercice 5 : vérification d'un formulaire
 
 
->>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
+

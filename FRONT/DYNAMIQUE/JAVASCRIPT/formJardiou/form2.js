@@ -12,6 +12,7 @@ const checker = document.getElementById('accepter');
 const errorsexe = document.querySelector('.error-sexe') ;
 const regExMail= /([A-Z]{1,})\.?(\w{1,})?(\d{1,})?@([A-Z]{1,})\.[a-z]{1,}/gi;
 const regExDate= /\d{4,}/g;
+const regExLettre = /^[a-z]{1,}/ig
 const todayDate = new Date().getFullYear();
 
 
@@ -38,19 +39,33 @@ focus(selects);
 const addClass =(arg)=>{
   return  arg.nextElementSibling.classList.add('errorWatch')
 }
+const removeClass =(arg)=>{
+  return  arg.nextElementSibling.classList.remove('errorWatch')
+}
+
 
 form.addEventListener('submit',(e)=>{
    
     let messages = [];
 
-    if(name_name.value == "" || name_name.value == null){
+    if(name_name.value == "" || name_name.value == null ){
         messages.push("entrez le nom  s,v,p");
         addClass(name_name);
+    }else if(regExLettre.test(name_name.value) == false ){
+        messages.push("name commence par minimum une lettre");
+        name_name.nextElementSibling.textContent = "name commence par minimum une lettre";
+        addClass(name_name);
+
     }
     
     if(prename.value == "" || prename.value == null){
         messages.push("entrez le prenom s,v,p");
         addClass(prename);
+    }   else if(regExLettre.test(prename.value) == false ){
+        messages.push("name commence par minimum une lettre");
+        prename.nextElementSibling.textContent = "name commence par minimum une lettre";
+        addClass(prename);
+
     }
     if(sexe[0].checked == false && sexe[1].checked == false){
       errorsexe.classList.add('errorWatch')
@@ -107,3 +122,16 @@ form.addEventListener('submit',(e)=>{
 
 })
 
+form.addEventListener('reset',(e)=>{
+ console.log(e);
+removeClass(name_name);
+removeClass(prename);
+removeClass(dateN);
+removeClass(CP);
+removeClass(adresse);
+removeClass(ville);
+removeClass(email);
+removeClass(selects);
+errorsexe.classList.remove('errorWatch')
+removeClass(checker);
+})
