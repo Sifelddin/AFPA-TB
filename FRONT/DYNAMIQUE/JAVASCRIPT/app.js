@@ -503,6 +503,8 @@
 // console.log(sorting(tableau));
 
 
+
+
 //Exercice 3 : recherche d'un prénom
 // const tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
 // console.log(tab);

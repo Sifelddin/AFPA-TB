@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.37),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.322), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.349), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.exercice-three,
+.exercice-one,
+.exercice-two,
+.exercice-four {
+  margin: 0 auto;
+  background-color: linear-gradient(
+    217deg,
+    rgba(255, 0, 0, 0.8),
+    rgba(255, 0, 0, 0) 70.71%
+  );
+}
+button {
+  background: radial-gradient(#fbfcffe8, #0e0c0cb4);
+  padding: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  letter-spacing: 3px;
+  font-style: italic;
+  font-weight: bold;
+}
+button:hover {
+  transition: 0.3s;
+  background: radial-gradient(#0e0c0cb4, #fbfcffce);
+  color: bisque;
+}
+
+.exercice-three:hover {
+  transition: 0.3s;
+}
+.exercice-four:hover {
+  transition: 0.3s;
+}
+.result {
+  background-color: rgb(204, 199, 199);
+  position: absolute;
+  height: 50vh;
+  bottom: 100px;
+  right: 0;
+  left: 0;
+}
+h1 {
+  color: rgba(0, 0, 0, 0.521);
+}
