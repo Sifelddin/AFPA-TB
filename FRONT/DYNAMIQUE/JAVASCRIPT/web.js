@@ -29,7 +29,7 @@
 
 
 
-///JS 15 : Les évènements
+//JS 15 : Les évènements
 
 
 // const btn = document.querySelector("button");
@@ -45,12 +45,15 @@
 // })
 
 
-
-
+// const img = document.querySelector('img');
 // const textBox1 = document.getElementById('textBox1');
 // const buttonVerifier = document.getElementById("button1") 
 // const randomNum =Math.round(Math.random() * 10); 
 
+// console.log(randomNum);
+// console.log(buttonVerifier);
+// console.log(textBox1);
+// console.log(img);
 
 // function verif(){
 //     buttonVerifier.addEventListener("click",()=>{
@@ -67,6 +70,7 @@
 //     textBox1.value="";
 // }else{
 //     alert("bravo!");
+//     img.src="./jarditou_html_zip/jarditou_photos/13.jpg";
 //     textBox1.value="";}
 
 //  });

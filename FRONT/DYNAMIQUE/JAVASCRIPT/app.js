@@ -402,7 +402,11 @@
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
 
+//<<<<<<< HEAD
+// //une fonction GetInteger pour lire un entier au clavier,
+//=======
 //une fonction GetInteger pour lire un entier au clavier,
+//>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
 // let GetInteger =()=> {
 //  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
 //   if(Number.isInteger(num)){
@@ -503,8 +507,74 @@
 // console.log(sorting(tableau));
 
 
+// <<<<<<< HEAD
 
 
+// =======
+// <<<<<<< HEAD
+
+
+
+
+
+
+
+
+//Evaluation Javascript pour les groupes TB
+
+//Exercice 1 - Calcul du nombre de jeunes, de moyens et de vieux
+
+// const allH1 = document.querySelectorAll('h1');
+// let SaisirAge =parseInt(prompt("veuillez rentrer un chiffre qui va représenter l'age une personne : "),10)
+// let tableau = [100];
+// let compteJeune = 0;
+// let compteMoyen = 0;
+// let compteVieux = 0;
+
+// while(SaisirAge != 100) {
+// if(SaisirAge > 0 && SaisirAge < 100){
+//     tableau.push(SaisirAge);
+// }
+//     SaisirAge = parseInt(prompt("veuillez rentrer un chiffre qui va représenter l'age une personne : "))
+// } 
+// for(let i = 0; i <tableau.length; i++){
+//     if(tableau[i] > 40 && tableau[i] <= 100){
+//     compteVieux++;
+// } else if(tableau[i] > 0 && tableau[i] < 20){
+//     compteJeune++;
+// }else if(tableau[i] >= 20 && tableau[i] <= 40){
+//     compteMoyen++;
+// }
+// }
+
+
+// allH1[0].innerText =allH1[0].textContent + compteJeune;
+// allH1[1].innerText =allH1[1].textContent + compteMoyen;
+// allH1[2].innerText =allH1[2].textContent + compteVieux;
+// console.log(compteVieux +"v");
+// console.log(compteJeune + "j");
+// console.log(compteMoyen +"m");
+// console.log(tableau);
+
+
+
+
+//Exercice 2 : Table de multiplication
+
+// let tableMultip = (num) => {
+//     let i = 0;
+//     let calcul = "";
+//     do{
+//    calcul +="<h1>" + i + " x " + num + " = " + i*num +"<br></h1>";
+//         i++;
+        
+//     }while(i <= 10);
+  
+// return document.write(calcul);
+// }
+// console.log(tableMultip(6));
+//=======
+//>>>>>>> c2401a556075bdbb61f3883c31a2b194e65c42ad
 //Exercice 3 : recherche d'un prénom
 // const tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
 // console.log(tab);
@@ -567,3 +637,4 @@
 //Exercice 5 : vérification d'un formulaire
 
 
+//>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
