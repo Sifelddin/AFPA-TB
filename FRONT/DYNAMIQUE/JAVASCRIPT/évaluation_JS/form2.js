@@ -43,7 +43,7 @@ form.addEventListener('submit',(e)=>{
     let messages = [];
 
     if(nom.value == "" || nom.value == null || regExp.test(nom.value) == false ){
-        nom.nextElementSibling.textContent = "entrez le nom S,V,P "
+        nom.nextElementSibling.textContent = "entrez un nom correcte S,V,P "
         messages.push(" le nom ");
         addClass(nom);
     }
@@ -59,7 +59,7 @@ form.addEventListener('submit',(e)=>{
    
     if(dateN.value == "" || dateN.value == null || dateN.value.match(regExDate) > todayDate){
         messages.push(" la date de naissance")
-        dateN.nextElementSibling.textContent = "entrez la correct date de naissance S,V,P";
+        dateN.nextElementSibling.textContent = "entrez une date de naissance correcte  S,V,P";
         addClass(dateN);
        
     }

@@ -10,11 +10,11 @@ body {
   height: 100vh;
   background: linear-gradient(
       217deg,
-      rgba(255, 0, 0, 0.37),
+      rgba(255, 0, 0, 0.178),
       rgba(255, 0, 0, 0) 70.71%
     ),
-    linear-gradient(127deg, rgba(0, 255, 0, 0.322), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, 0.349), rgba(0, 0, 255, 0) 70.71%);
+    linear-gradient(127deg, rgba(0, 255, 0, 0.253), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.253), rgba(0, 0, 255, 0) 70.71%);
 }
 
 .container {
@@ -56,14 +56,37 @@ button:hover {
 .exercice-four:hover {
   transition: 0.3s;
 }
-.result {
-  background-color: rgb(204, 199, 199);
+.exercice-text{
+  background: radial-gradient(#0e0c0c18, #fbfcff28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  height: 50vh;
-  bottom: 100px;
+  top: 150px;
   right: 0;
   left: 0;
 }
+.commence{
+  display: none;
+}
+.commence-show{
+  display: block;
+}
+.result {
+
+  background: radial-gradient(#0e0c0c18, #fbfcff28);
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  left: 0;
+ 
+  word-break: break-all;
+  word-wrap: break-word;
+
+}
 h1 {
   color: rgba(0, 0, 0, 0.521);
+  
+  padding: 0 100px;
+  max-height: 300px;
 }
