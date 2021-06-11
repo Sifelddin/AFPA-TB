@@ -402,19 +402,19 @@
 //     alert('il faut rentrer un chiffre pour continuer !')
 // }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 //une fonction GetInteger pour lire un entier au clavier,
 
 //une fonction GetInteger pour lire un entier au clavier 2èm méthode,
 
-=======
+//=======
 //<<<<<<< HEAD
 // //une fonction GetInteger pour lire un entier au clavier,
 //=======
 //une fonction GetInteger pour lire un entier au clavier,
 //>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
->>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
+//>>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
 // let GetInteger =()=> {
 //  let num = parseInt( prompt("entrez un entier qui est le nombre de postes souhaité dans le tableau:"),10);
 //   if(Number.isInteger(num)){
@@ -521,15 +521,15 @@
 // console.log(sorting(tableau));
 
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
-=======
+// =======
 // <<<<<<< HEAD
 
 
 // =======
 // <<<<<<< HEAD
->>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
+//>>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
 
 
 
@@ -591,12 +591,12 @@
 // return document.write(calcul);
 // }
 // console.log(tableMultip(6));
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
-=======
+//=======
 //=======
 //>>>>>>> c2401a556075bdbb61f3883c31a2b194e65c42ad
->>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
+//>>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
 //Exercice 3 : recherche d'un prénom
 // const tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
 // console.log(tab);
@@ -659,8 +659,8 @@
 //Exercice 5 : vérification d'un formulaire
 
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
-=======
-//>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
->>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
+// =======
+// //>>>>>>> 167e0576bf0cd4404da09a93fe9533b529554b96
+// >>>>>>> cfbbbaeef5c3804572e719d78f9eb12dac369dda
