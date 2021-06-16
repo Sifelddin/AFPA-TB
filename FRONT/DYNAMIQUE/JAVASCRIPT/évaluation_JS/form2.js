@@ -1,3 +1,4 @@
+//semect HTML elements avec d'autres variables 
 const form = document.querySelector('form');
 const nom = document.querySelector('#name');
 const prenom = document.querySelector('.prenom');
@@ -12,11 +13,11 @@ const checker = document.getElementById('accepter');
 const errorsexe = document.querySelector('.error-sexe') ;
 const regExMail= /^([A-Za-z]){1,}([0-9]+)?(\.)?(|\w+|\d+)?@[a-z]+\.[a-z]{1,4}$/;
 const regExDate= /\d{4,}/;
-const regExp = /^[a-zA-z]+$/
+const regNomPrenom = /^[a-zA-z]+$/
 const todayDate = new Date().getFullYear();
 
 
-
+//
 let focus = (arg) =>{
     arg.addEventListener('blur',()=>{
         if(arg.value == "" || arg.value == null){
@@ -37,24 +38,26 @@ const removeClass = (champ) => { return champ.nextElementSibling.classList.remov
 
 
 
-
+//submit function avec toute les conditions pour submit le formulaire
 form.addEventListener('submit',(e)=>{
    
     let messages = [];
 
-    if(nom.value == "" || nom.value == null || regExp.test(nom.value) == false ){
+    if(nom.value == "" || nom.value == null || regNomPrenom.test(nom.value) == false ){
         nom.nextElementSibling.textContent = "entrez un nom correcte S,V,P "
         messages.push(" le nom ");
         addClass(nom);
     }
     
-    if(prenom.value == "" || prenom.value == null || regExp.test(prenom.value) == false){
+    if(prenom.value == "" || prenom.value == null || regNomPrenom.test(prenom.value) == false){
         messages.push(" le prenom");
         prenom.nextElementSibling.textContent = "entrez le prenom S,V,P "
         addClass(prenom);
     }
     if(sexe[0].checked == false && sexe[1].checked == false){
       errorsexe.classList.add('errorWatch')
+    }else{
+        errorsexe.classList.remove('errorWatch');
     }
    
     if(dateN.value == "" || dateN.value == null || dateN.value.match(regExDate) > todayDate){
@@ -91,14 +94,14 @@ form.addEventListener('submit',(e)=>{
     if(checker.checked == false ){
         messages.push("ce champ est obligatoir");
         addClass(checker);
+    }else{
+        removeClass(checker);
     }
     
     if(messages.length > 0){
-    
-        e.preventDefault()
-        
+        e.preventDefault()  
     }
-
+    console.log(messages)
 })
 
 form.addEventListener("reset", () =>{
@@ -115,7 +118,7 @@ form.addEventListener("reset", () =>{
   })
 
   
-  focus(nom);
+focus(nom);
 focus(prenom);
 focus(dateN);
 focus(CP);
