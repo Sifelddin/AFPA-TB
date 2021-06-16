@@ -179,7 +179,7 @@ let selectExercice = (select) => {
 allBtns.forEach(item => item.addEventListener("click", (e) => {
 
     if (e.target == allBtns[0]) {
-        selectExercice(textContentExercice1);
+       setInterval( selectExercice(textContentExercice1),3000);
     }
     if (e.target == allBtns[1]) {
         selectExercice(textContentExercice2);
