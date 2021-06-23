@@ -1,0 +1,2 @@
+[23-Jun-2021 12:58:05 UTC] PHP Warning:  require(joe.com): failed to open stream: No such file or directory in C:\Users\80010-13-02\Desktop\BEKHOUCHE ALI TAREK\BACK\SERVEUR\PHP\demo.php on line 22
+[23-Jun-2021 12:58:05 UTC] PHP Fatal error:  require(): Failed opening required 'joe.com' (include_path='.;C:/laragon/etc/php/pear') in C:\Users\80010-13-02\Desktop\BEKHOUCHE ALI TAREK\BACK\SERVEUR\PHP\demo.php on line 22
