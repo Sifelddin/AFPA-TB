@@ -1,4 +1,5 @@
 <?php
+require "functions.php";
 // $jeux_nom = ["mario", 'titrice',"phlipare"];
 
 
@@ -21,18 +22,81 @@
 
 // require 'joe.com';
 
+$a = array("19001" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "", "", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", "Validation"), 
+     "19002" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", ""), 
+     "19003" => array("", "", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "", "", "Validation") 
+    );
 
-//Exercice
-//Ecrivez la fonction calculator() traitant les opérations d'addition, de soustraction, de multiplication et de division.
+    ?>
 
 
-// function calculator(int $chiff1, int $chiff2)
-// {
-//     $addition = $chiff1 + $chiff2;
-//     $soustraction = $chiff1 - $chiff2;
-//     $multiplication = $chiff1 * $chiff2;
-//     $division = $chiff1 * $chiff2;
-//     echo "l'opération entre : $chiff1 et $chiff2 <br>  addition : $addition <br> soustraction : $soustraction <br> multiplication $multiplication <br> division : $division";
-// }
 
-// calculator(5, 6);
+
+
+
+
+
+
+
+<pre>
+<?php  
+
+//Exercice 1
+
+$arr = $a["19002"];
+$i = 0;
+foreach($arr as $sub_arr){
+    $i++;
+    if( $sub_arr == "Validation"){
+    echo $i;
+    break;
+}
+}
+
+
+
+
+
+
+//Exercice 2
+$arr = $a["19001"];
+$i = 0;
+foreach($arr as $sub_arr){
+   
+    if( $sub_arr == "Validation"){
+    echo $i- 1;
+    break;
+}
+$i++;
+}
+
+
+
+
+
+//Exercice 3
+$new_arr = [];
+foreach($a as $key => $arr){
+    $new_arr[] = $key;
+};
+print_r($new_arr);
+
+
+
+
+
+
+//4
+$arr = $a["19003"];
+$i = 0;
+foreach($arr as $sub_arr){
+   
+    if( $sub_arr == "Stage"){
+        $i++;
+}
+}
+echo $i;
+
+
+
+?>
