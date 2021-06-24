@@ -22,81 +22,133 @@ require "functions.php";
 
 // require 'joe.com';
 
-$a = array("19001" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "", "", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", "Validation"), 
-     "19002" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", ""), 
-     "19003" => array("", "", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "", "", "Validation") 
-    );
+$a = array(
+    "19001" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "", "", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", "Validation"),
+    "19002" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", ""),
+    "19003" => array("", "", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "", "", "Validation")
+);
 
-    ?>
-
-
-
-
-
-
+?>
 
 
 
 
 <pre>
-<?php  
 
-//Exercice 1
+    <?php
 
-$arr = $a["19002"];
-$i = 0;
-foreach($arr as $sub_arr){
-    $i++;
-    if( $sub_arr == "Validation"){
-    echo $i;
-    break;
-}
-}
+    //Exercice 1
 
+    // $arr = $a["19002"];
 
+    // foreach($arr as $index => $sub_arr){
+    //     if( $sub_arr == "Validation"){
+    //     echo $index + 1;
+    //     break;
+    // }
+    // }
 
 
 
 
-//Exercice 2
-$arr = $a["19001"];
-$i = 0;
-foreach($arr as $sub_arr){
+
+    // $arr = $a["19002"];
+    // $i = 0;
+    // foreach ($arr as $sub_arr) {
+    //     $i++;
+    //     if ($sub_arr == "Validation") {
+    //         echo $i;
+    //         break;
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
+    //Exercice 2
+    // $arr = $a["19001"];
+    // $i = 0;
+    // foreach($arr as $sub_arr){
+
+    //     if( $sub_arr == "Validation"){
+    //     echo $i- 1;
+    //     break;
+    // }
+    // $i++;
+    // }
+
+
+
+
+    // $arr = $a["19001"];
+    // $new_arr = [];
+    // foreach ($arr as $index => $sub_arr) {
+    //     if ($sub_arr == "Stage") {
+    //         $new_arr[] = $index;
+    //     }
+    // }
+    // echo $new_arr[array_key_last($new_arr)] . "\n";
+
+    // print_r($arr);
+
+
+
+
+
+
+    // //Exercice 3
+    // $new_arr = [];
+    // foreach($a as $key => $arr){
+    //     $new_arr[] = $key;
+    // };
+    // print_r($new_arr);
+
+
+
+
+
+
+    // // Exercice4
+    // $arr = $a["19003"];
+    // $i = 0;
+    // foreach($arr as $sub_arr){
+
+    //     if( $sub_arr == "Stage"){
+    //         $i++;
+    // }
+    // }
+    // echo $i;
+
+
+
+
+
+    // $arr = $a["19003"];
+    // $new_arr = [];
+    // foreach ($arr as $sub_arr) {
+
+    //     if ($sub_arr == "Stage") {
+    //         $new_arr[] = $sub_arr;
+    //     }
+    // }
+    // print_r($new_arr);
+    // echo count($new_arr);
+
+
+
+    // 
+    ?>
    
-    if( $sub_arr == "Validation"){
-    echo $i- 1;
-    break;
-}
-$i++;
-}
-
-
-
-
-
-//Exercice 3
-$new_arr = [];
-foreach($a as $key => $arr){
-    $new_arr[] = $key;
-};
-print_r($new_arr);
 
 
 
 
 
 
-//4
-$arr = $a["19003"];
-$i = 0;
-foreach($arr as $sub_arr){
-   
-    if( $sub_arr == "Stage"){
-        $i++;
-}
-}
-echo $i;
 
-
-
-?>
+</pre>
