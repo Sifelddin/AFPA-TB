@@ -43,8 +43,9 @@
     <pre>
 <?php
 
-if (count($_POST) > 0) {
-    var_dump($_POST);
+if
+ (count($_REQUEST) > 0) {
+    print_r($_REQUEST);
 }
 
 ?>

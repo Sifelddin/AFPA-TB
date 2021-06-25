@@ -37,7 +37,7 @@ $a = array(
 
     <?php
 
-    //Exercice 1
+   // Exercice 1
 
     // $arr = $a["19002"];
 
@@ -70,7 +70,7 @@ $a = array(
 
 
 
-    //Exercice 2
+    // //Exercice 2
     // $arr = $a["19001"];
     // $i = 0;
     // foreach($arr as $sub_arr){
