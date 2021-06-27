@@ -43,10 +43,7 @@
     <pre>
 <?php
 
-if
- (count($_REQUEST) > 0) {
-    print_r($_REQUEST);
-}
+
 
 ?>
 </pre>

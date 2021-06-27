@@ -1,3 +1,7 @@
+<?php
+require "./form_val.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PAGE CONTACT</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="./form2.js"></script>
+    <!-- <script defer src="./form2.js"></script> -->
 
 </head>
 
@@ -30,47 +34,65 @@
         <h1>Contact</h1>
 
         <label>* Ces zones sont obligatoires</label>
-        <form action="../php05.php" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST">
             <fieldset>
                 <legend>Vos coordonnés</legend>
                 <div class="div-name">
                     <label for="name">Votre nom* : </label>
                     <input class="name" type="text" id="name" name="nom">
-                    <label class="error">Veuillez remplir ce champ obligatoire*</label>
+                    <?php if (isset($_POST["nom"])) {
+                        condition_validation($_POST["nom"]);
+                        correcte_form('nom');
+                    };
+                    ?>
+
+
+
                 </div>
                 <br>
                 <div class="div-prenom">
                     <label for="prénom">Votre prénom* : </label>
                     <input class="prenom" type="text" id="prénom" name="prenom">
-                    <label class="error">Veuillez remplir ce champ obligatoire*</label>
+                    <?php if (isset($_POST["prenom"])) {
+                        condition_validation($_POST["prenom"]);
+                        correcte_form('prenom');
+                    };
+                    ?>
                 </div>
                 <br>
                 <div class="div-sexe">
                     <label>Sexe*:</label>
                     <label> Féminin<input class="input-radio" type="radio" name="sexe" value="Féminin"></label>
                     <label> Masculin<input class="input-radio" type="radio" name="sexe" value="Masculin"></label>
-                    <label class="error-sexe">Veuillez remplir ce champ obligatoire*</label>
+                    <?= (isset($_POST) && count($_POST) > 0) ? check_validation("sexe") : ""; ?>
                 </div>
                 <br><br>
                 <div class="div-date">
                     <label for="Data">Date de naissance* : </label>
-                    <input class="date" type="date" id="Data" name="data" value="">
-                    <label class="error">Veuillez remplir ce champ obligatoire*</label>
+                    <input class="date" type="date" id="Data" name="naissance_date" value="">
+                    <?php (isset($_POST["naissance_date"])) ? condition_validation($_POST["naissance_date"]) : ""; ?>
+
                 </div>
                 <br>
 
                 <div class="div-number"> <label for="number">Code postal* :</label>
-                    <input id="number" class="number" type="number" name="CP"><label class="error">Veuillez remplir ce champ obligatoire*</label>
+                    <input id="number" class="number" type="number" name="CP">
+                    <?php (isset($_POST["CP"])) ? condition_validation($_POST["CP"]) : ""; ?>
                 </div>
                 <br>
-                <div class="div-adresse"> <label>Adresse *: </label><input class="adresse" type="text" name="Adresse"><label class="error">Veuillez remplir ce champ obligatoire*</label>
+                <div class="div-adresse"> <label>Adresse *: </label><input class="adresse" type="text" name="adresse">
+                    <?php (isset($_POST["adresse"])) ? condition_validation($_POST["adresse"]) : ""; ?>
                 </div><br>
-                <div class="div-ville"><label>ville *: </label><input class="ville" type="text" name="ville"><label class="error">Veuillez remplir ce champ obligatoire*</label>
+                <div class="div-ville"><label>ville *: </label><input class="ville" type="text" name="ville">
+                    <?php (isset($_POST["ville"])) ? condition_validation($_POST["ville"]) : ""; ?>
                 </div><br>
                 <div class="div-email">
                     <label>email* : </label>
                     <input class="email" type="email" name="email" placeholder="dave.loper@afpa.fr">
-                    <label class="error">Veuillez remplir ce champ obligatoire*</label>
+                    <?php if (isset($_POST["email"])) {
+                        condition_validation($_POST["email"]);
+                        correcte_form('email');
+                    }; ?>
                 </div><br>
             </fieldset>
             <br><br>
@@ -87,7 +109,7 @@
                         <option value="Réclamation">Réclamation</option>
                         <option value="Autre">Autre</option>
                     </select>
-                    <label class="error">Sélectionnez une option dans le menu déroulant*.</label>
+                    <?= (isset($_POST) && count($_POST) > 0) ? check_validation("sujet") : ""; ?>
                 </div>
                 <br>
                 <div class="div-comment">
@@ -99,13 +121,11 @@
             <br>
             <div class="submition">
                 <label>j'accepte le traitement informatique de ce formulaire*</label>
-                <input class="input-checkbox" type="checkbox" id="accepter">
-                <label class="error">Veuillez remplir ce champ obligatoire*</label>
+                <input class="input-checkbox" type="checkbox" id="accepter" name="accepte">
+                <?= (isset($_POST) && count($_POST) > 0) ? check_validation("accepte") : ""; ?>
 
                 <br>
-                <br>
-                <input class="file" type="file" name="fichier">
-                <br>
+
                 <br>
                 <button class="submit" type="submit" value="">Envoyer</button>
                 <button class="exit" type="reset" value="annuler">annuler</button>
