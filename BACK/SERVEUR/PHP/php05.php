@@ -1,6 +1,32 @@
+<?php require "conect_BDD.php";
+try {
+    $req = $db->query("SELECT * FROM station");
+} catch (PDOException $e) {
+    $error = $e->getMessage();
+}
+
+echo "<pre>";
+$resultat = $req->fetchAll();
+var_dump(($resultat));
+echo "</pre>";
+
+?>
+
+
+
 <html>
 
 <body>
+
+
+    <?php if ($error) : ?>
+        <br>
+        <div class="alert alert-danger"><?= $error ?></div>
+    <?php else : ?>
+
+    <?php endif ?>
+
+
     <?php
     // //var_export($_POST);
     // //echo "<br>";
