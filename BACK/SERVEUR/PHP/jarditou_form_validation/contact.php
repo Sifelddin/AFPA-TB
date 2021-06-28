@@ -1,5 +1,7 @@
 <?php
 require "./form_val.php";
+
+$count = 0;
 ?>
 
 <!DOCTYPE html>
@@ -34,65 +36,89 @@ require "./form_val.php";
         <h1>Contact</h1>
 
         <label>* Ces zones sont obligatoires</label>
-        <form action="" method="POST">
+        <form action=""  method="POST">
             <fieldset>
                 <legend>Vos coordonnés</legend>
                 <div class="div-name">
                     <label for="name">Votre nom* : </label>
                     <input class="name" type="text" id="name" name="nom">
-                    <?php if (isset($_POST["nom"])) {
-                        condition_validation($_POST["nom"]);
-                        correcte_form('nom');
-                    };
+                    <?php
+                    if (isset($_POST["submit"]) && condition_validation("nom") !== NULL){
+                            $count++;
+                        }
+                
                     ?>
-
-
 
                 </div>
                 <br>
                 <div class="div-prenom">
                     <label for="prénom">Votre prénom* : </label>
                     <input class="prenom" type="text" id="prénom" name="prenom">
-                    <?php if (isset($_POST["prenom"])) {
-                        condition_validation($_POST["prenom"]);
-                        correcte_form('prenom');
-                    };
+                    <?php
+                    if (isset($_POST["submit"]) && condition_validation("prenom") !== NULL){
+                            $count++;
+                        }
+                
                     ?>
+
                 </div>
                 <br>
                 <div class="div-sexe">
                     <label>Sexe*:</label>
                     <label> Féminin<input class="input-radio" type="radio" name="sexe" value="Féminin"></label>
                     <label> Masculin<input class="input-radio" type="radio" name="sexe" value="Masculin"></label>
-                    <?= (isset($_POST) && count($_POST) > 0) ? check_validation("sexe") : ""; ?>
+                    <?php 
+
+                    if(isset($_POST["submit"]) && !isset($_POST["sexe"])){ 
+                        check_validation("sexe");
+                        $count++;
+                    } 
+                    ?>
                 </div>
                 <br><br>
                 <div class="div-date">
                     <label for="Data">Date de naissance* : </label>
                     <input class="date" type="date" id="Data" name="naissance_date" value="">
-                    <?php (isset($_POST["naissance_date"])) ? condition_validation($_POST["naissance_date"]) : ""; ?>
+                     <?php if (isset($_POST["submit"]) && condition_validation("naissance_date") !== NULL){
+                            $count++;
+                        }
+                
+                    ?>
 
                 </div>
                 <br>
 
                 <div class="div-number"> <label for="number">Code postal* :</label>
                     <input id="number" class="number" type="number" name="CP">
-                    <?php (isset($_POST["CP"])) ? condition_validation($_POST["CP"]) : ""; ?>
+                    <?php if (isset($_POST["submit"]) && condition_validation("CP") !== NULL){
+                            $count++;
+                        }
+                
+                    ?>
                 </div>
                 <br>
                 <div class="div-adresse"> <label>Adresse *: </label><input class="adresse" type="text" name="adresse">
-                    <?php (isset($_POST["adresse"])) ? condition_validation($_POST["adresse"]) : ""; ?>
+                    <?php  if (isset($_POST["submit"]) && condition_validation("adresse") !== NULL){
+                            $count++;
+                        }
+                
+                    ?>
                 </div><br>
                 <div class="div-ville"><label>ville *: </label><input class="ville" type="text" name="ville">
-                    <?php (isset($_POST["ville"])) ? condition_validation($_POST["ville"]) : ""; ?>
+                    <?php   if (isset($_POST["submit"]) && condition_validation("ville") !== NULL){
+                            $count++;
+                        }
+                
+                    ?>
                 </div><br>
                 <div class="div-email">
                     <label>email* : </label>
                     <input class="email" type="email" name="email" placeholder="dave.loper@afpa.fr">
-                    <?php if (isset($_POST["email"])) {
-                        condition_validation($_POST["email"]);
-                        correcte_form('email');
-                    }; ?>
+                    <?php   if (isset($_POST["submit"]) && condition_validation("email") !== NULL){
+                            $count++;
+                        }
+                
+                    ?>
                 </div><br>
             </fieldset>
             <br><br>
@@ -109,7 +135,11 @@ require "./form_val.php";
                         <option value="Réclamation">Réclamation</option>
                         <option value="Autre">Autre</option>
                     </select>
-                    <?= (isset($_POST) && count($_POST) > 0) ? check_validation("sujet") : ""; ?>
+                   <?php if(isset($_POST["submit"]) && !isset($_POST["sujet"])){ 
+                        check_validation("sujet");
+                        $count++;
+                    } 
+                    ?>
                 </div>
                 <br>
                 <div class="div-comment">
@@ -122,16 +152,32 @@ require "./form_val.php";
             <div class="submition">
                 <label>j'accepte le traitement informatique de ce formulaire*</label>
                 <input class="input-checkbox" type="checkbox" id="accepter" name="accepte">
-                <?= (isset($_POST) && count($_POST) > 0) ? check_validation("accepte") : ""; ?>
+                <?php if(isset($_POST["submit"]) && !isset($_POST["accepte"])){ 
+                        check_validation("accepte");
+                        $count++;
+                    } 
+                    ?>
 
                 <br>
 
                 <br>
-                <button class="submit" type="submit" value="">Envoyer</button>
+                <button class="submit" type="submit" name="submit" value="">Envoyer</button>
                 <button class="exit" type="reset" value="annuler">annuler</button>
 
             </div>
         </form>
+
+<?php
+
+if(isset($_POST["submit"]) && $count === 0){
+  echo "<h1> votre formulaire a été envoyé </h1>";
+foreach($_POST as $champ => $valeur){
+    if($champ != "submit"){
+   echo "<h2>- champ $champ sa valeur est:  <span style=\"color: lightgreen;\">$valeur</span> </h2>";
+}
+}
+}
+?>
 
 
     </main>
@@ -145,3 +191,6 @@ require "./form_val.php";
 </body>
 
 </html>
+
+
+

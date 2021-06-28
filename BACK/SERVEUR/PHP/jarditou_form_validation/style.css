@@ -205,13 +205,11 @@ label {
   background-color: rgb(160, 16, 64);
   margin: 0 auto;
 }
-.file{
-  font-size: 1.25rem;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
 
+span{
+  color: #37af65;
+
+}
 
 @media screen and (max-width: 768px) {
   .logo h1 {
