@@ -1,13 +1,66 @@
-<?php require "conect_BDD.php";
+<?php 
+
+echo '<pre>';
+echo $_POST["submit"];
+echo '</pre>';
+
+$id_station = $_POST['id'];
+$nom_station = $_POST['nom'];
+$altitude_station = $_POST['altitude'];
+
+
+require "conect_BDD.php";
+
+
+if($_POST["submit"] === "Valider les modifications"){
+// Construction de la requête UPDATE sans injection SQL
+try {
+$rq = "UPDATE station SET sta_nom=:sta_nom, sta_altitude=:sta_altitude WHERE sta_id=:sta_id";
+$requete = $db->prepare($rq);
+
+$requete->execute([
+    ":sta_id" => $id_station,
+    ":sta_nom" => $nom_station,
+    ":sta_altitude" => $altitude_station
+]);
+
+} catch (PDOException $e) {
+$error = $e->getMessage();
+echo "N° : " . $e->getCode();
+}
+if($error){
+    echo $error;
+}
+}
+if($_POST["submit"] === "suppression"){
+// Construction de la requête DELETE sans injection SQL
+try {
+$rq = "DELETE FROM station WHERE sta_id=:sta_id";
+$requete = $db->prepare($rq);
+
+$requete->execute([
+    ":sta_id" => $id_station
+]);
+$requete->closeCursor();
+} catch (PDOException $e) {
+$error = $e->getMessage();
+echo "N° : " . $e->getCode();
+}
+if($error){
+    echo $error;
+}
+}
+
+
 try {
     $req = $db->query("SELECT * FROM station");
 } catch (PDOException $e) {
-    $error = $e->getMessage();
+   
 }
 
 echo "<pre>";
 $resultat = $req->fetchAll();
-var_dump(($resultat));
+print_r(($resultat));
 echo "</pre>";
 
 ?>
@@ -21,7 +74,7 @@ echo "</pre>";
 
     <?php if ($error) : ?>
         <br>
-        <div class="alert alert-danger"><?= $error ?></div>
+        <div class="alert alert-danger"><?php echo $error ; $error = $e->getMessage();?></div>
     <?php else : ?>
 
     <?php endif ?>

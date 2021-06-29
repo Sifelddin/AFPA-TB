@@ -42,13 +42,13 @@ try {
     <form action="" method="post">
         <label for="nom_for_label">Nom de la station :</label><br>
         <div class="form-group">
-            <input type="text" value="" name="nom" id="nom_for_label">
+            <input class="form-control" type="text" value="" name="nom" id="nom_for_label">
         </div>
 
 
         <label for="altitude_for_label">Altitude :</label><br>
         <div class="form-group">
-            <input type="text" value="" name="altitude" id="altitude_for_label">
+            <input class="form-control"  type="text" value="" name="altitude" id="altitude_for_label">
 
         </div>
         <input class="btn btn-primary" name="submit" type="submit" value="Ajouter">
