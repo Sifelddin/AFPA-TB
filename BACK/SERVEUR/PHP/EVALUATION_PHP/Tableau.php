@@ -1,68 +1,101 @@
 <?php
 require "conect_BDD.php";
-require "./header.php"
- 
+require "./header.php";
+if (isset($_GET["pro_id"])) {
+    $id = $_GET["pro_id"];
+    $request = $db->query("SELECT * FROM produits JOIN categories ON cat_id = pro_cat_id WHERE pro_id = $id");
+    $row = $request->fetch();
+}
+$tableu = [];
+$tableu[] = $row->cat_nom;
+print_r($tableu);
 ?>
-        
-        <div class="table-responsive-md">
-         <table class="table table-bordered table-sm">
-        <thead class="bg-light h5 display-5">
-            <tr>
-            <th> Photo </th>
-            <th> ID </th>
-             <th>   Catégorie </th>
-             <th> Libellé </th>
-            <th> Prix </th>
-            <th> Couleur </th>
-        </tr> 
-        </thead>
-        <tbody class="table-hover">
-        <tr class="table-warning">
-            <td><img style="width: 160px;"  class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/11.jpg" alt=""></td>
-            <td>11</td>
-             <td>  Barbecues </td>
-              <td>Clatronic </td>
-            <td>   135.90 €</td>
-            <td>  Chrome</td>
-        </tr>
-        <tr>
-            <td><img style="width: 160px;" class="img-responsive img-fluid " src="./jarditou_html_zip/jarditou_photos/12.jpg" alt=""></td>
-            <td> 12 </td>
-              <td>   Barbecues </td>
-               <td>Camping </td>
-            <td>   88.00 €</td>
-            <td>  Noire</td>
-        </tr>
-        <tr class="table-warning">
-            <td><img style="width: 160px;"  class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/8.jpg" alt=""></td>
-            <td> 8 </td>
-              <td>   Barbecues </td>
-              <td> Athos </td>
-            <td>   249.99 €</td>
-            <td>  Noire</td>
-        </tr>
-        <tr>
-            <td><img style="width: 160px;"  class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/7.jpg" alt=""></td>
-            <td> 7 </td>
-            <td> Barbecues </td>
-             <td>Aramis </td>
-            <td>   110.00 €</td>
-            <td>  Brun</td>
-        </tr>
-        <tr class="table-warning">
-            <td><img style="width: 160px;"  class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/13.jpg" alt=""></td>
-            <td> 13 </td>
-            <td> Brouette </td>
-            <td>Athos </td>
-            <td>49.00 €</td>
-            <td >Green</td>
-        </tr>
-             
-        </tbody>
-    </table>
-</div>
-   
+<div class="container">
+    <form action="php05.php" method="post">
+        <div class="form-group">
+            <h2>formulaire de modification</h2>
+            <div>
+                <label>Référence :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_ref ?>" readonly name="ref">
+            </div>
+            <br>
 
-<?php 
+            <div>
+                <label for="categorie_for_label">Catégorie :</label><br>
+                <input class="form-control" type="text" value="<?= $row->cat_nom ?>" name="categorie" id="categorie_for_label" readonly>
+
+            </div>
+            <br>
+
+            <div>
+                <label for="libellé_for_label">Libellé :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_libelle ?>" name="libelle" id="libellé_for_label" readonly>
+            </div>
+
+            <br>
+            <div>
+                <label for="description_for_label">Description :</label><br>
+                <textarea class="form-control" name="description" id="" cols="10" rows="3" readonly><?= $row->pro_description ?></textarea>
+            </div>
+
+            <br>
+            <div>
+                <label for="prix_for_label">Prix :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_prix . " €" ?>" name="prix" id="prix_for_label" readonly>
+            </div>
+
+            <br>
+            <div>
+                <label for="stock_for_label">Stock :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_stock ?>" name="stock" id="stock_for_label" readonly>
+            </div>
+
+            <br>
+            <div>
+                <label for="couleur_for_label">Couleur :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_couleur ?>" name="couleur" id="couleur_for_label" readonly>
+            </div>
+
+            <br>
+
+
+            <label for="">Produit Bloqué :</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio1" value="oui" readonly <?php if ($row->pro_bloque !== NULL) {
+                                                                                                                                    echo "checked";
+                                                                                                                                }  ?>>
+                    <label class="form-check-label" for="inlineRadio1">oui</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio2" value="non" readonly <?php if ($row->pro_bloque === NULL) {
+                                                                                                                                    echo "checked";
+                                                                                                                                }  ?>>
+                    <label class="form-check-label" for="inlineRadio2">non</label>
+                </div>
+            </div>
+
+            <br>
+            <div>
+                <label for="ajout_for_label">Date d'ajout :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_d_ajout ?>" name="date_ajout" id="ajout_for_label" readonly>
+            </div>
+            <br>
+            <div>
+                <label for="modif_for_label">Date de modification :</label><br>
+                <input class="form-control" type="text" value="<?= $row->pro_d_modif ?>" name="date_modif" id="modif_for_label" readonly>
+            </div>
+            <br>
+        </div>
+
+        <a href="index.php"><input class="px-4 mx-5 btn btn-secondary" type="submit" name="submit" value="Routeur"></a>
+        <input class="px-4 mx-5 btn btn-danger" type="submit" name="supprimer" value="Supprimer">
+        <input class="px-4 mx-5 btn btn-warning" type="submit" name="modifier" value="Modifier">
+    </form>
+    <br>
+    <br>
+</div>
+<?php
 require "./footer.php";
 ?>
