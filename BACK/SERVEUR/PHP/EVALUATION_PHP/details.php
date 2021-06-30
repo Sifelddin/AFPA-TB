@@ -11,9 +11,9 @@ $tableu[] = $row->cat_nom;
 print_r($tableu);
 ?>
 <div class="container">
-    <form action="php05.php" method="post">
+    <form action="modif_form.php" method="GET">
         <div class="form-group">
-            <h2>formulaire de modification</h2>
+            <img class="img-fluid rounded mx-auto d-block" src="./jarditou_html_zip/jarditou_photos/7.jpg" alt="">
             <div>
                 <label>Référence :</label><br>
                 <input class="form-control" type="text" value="<?= $row->pro_ref ?>" readonly name="ref">
@@ -41,7 +41,7 @@ print_r($tableu);
             <br>
             <div>
                 <label for="prix_for_label">Prix :</label><br>
-                <input class="form-control" type="text" value="<?= $row->pro_prix . " €" ?>" name="prix" id="prix_for_label" readonly>
+                <input class="form-control" type="text" value="<?= $row->pro_prix ?>" name="prix" id="prix_for_label" readonly>
             </div>
 
             <br>
@@ -89,9 +89,10 @@ print_r($tableu);
             <br>
         </div>
 
-        <a href="index.php"><input class="px-4 mx-5 btn btn-secondary" type="submit" name="submit" value="Routeur"></a>
-        <input class="px-4 mx-5 btn btn-danger" type="submit" name="supprimer" value="Supprimer">
-        <input class="px-4 mx-5 btn btn-warning" type="submit" name="modifier" value="Modifier">
+        <a href="index.php"><input class="px-4 mx-5 btn btn-secondary"name="submit" value="Routeur"></a>
+        <a href="delete_form.php"><input class="px-4 mx-5 btn btn-danger"  name="supprimer" value="suppression"></a>
+        <a href="modif_form.php?pro_id=<?= $row->pro_id?>"><input class="px-4 mx-5 btn btn-warning" name="modifier" value="Modification"></a>
+       
     </form>
     <br>
     <br>

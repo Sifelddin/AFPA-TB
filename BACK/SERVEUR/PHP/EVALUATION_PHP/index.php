@@ -15,13 +15,15 @@ try {
   <?= $error ?>
 <?php else : ?>
   <?php
-
   $objs_dai = $req->fetchAll();
   ?>
 
 
   <div class="container-fluid">
-
+    <br>
+  <a href="form_ajout.php"><input class="mx-auto px-4 mx-5 btn btn-danger"  name="supprimer" value="ajouter"></a>
+  <br>
+  <br>
     <div class="table-responsive-md">
       <table class="table table-bordered table-sm">
         <thead class="bg-light h5 display-5">
@@ -42,19 +44,19 @@ try {
 
           <?php foreach ($objs_dai as  $val) : ?>
             <tr class="table-warning text-center ">
-              <td><img style="width: 160px;" class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/11.jpg" alt=""></td>
-              <td><?= $val->pro_id ?></td>
-              <td><?= $val->pro_ref ?></td>
-              <td><a href="Tableau.php?pro_id=<?= $val->pro_id ?>"><?= $val->pro_libelle ?></a></td>
-              <td><?= $val->pro_prix . " €" ?></td>
-              <td><?= $val->pro_stock ?></td>
-              <td><?= $val->pro_couleur ?></td>
-              <td><?= $val->pro_d_ajout ?></td>
-              <td><?= $val->pro_d_modif ?></td>
-              <td><?= $val->pro_bloque ?></td>
+              <td class="align-middle"><img style="width: 160px;" class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/11.jpg" alt=""></td>
+              <td class="align-middle"><?= $val->pro_id ?></td>
+              <td class="align-middle"><?= $val->pro_ref ?></td>
+              <td class="align-middle"><strong><a class="text-danger" href="details.php?pro_id=<?= $val->pro_id ?>"><?= $val->pro_libelle ?></strong></a></td>
+              <td class="align-middle"><?= $val->pro_prix . " €" ?></td>
+              <td class="align-middle"><?= $val->pro_stock ?></td>
+              <td class="align-middle"><?= $val->pro_couleur ?></td>
+              <td class="align-middle"><?= $val->pro_d_ajout ?></td>
+              <td class="align-middle"><?= $val->pro_d_modif ?></td>
+              <td class="align-middle"><?= $val->pro_bloque ?></td>
             </tr>
           <?php endforeach ?>
-
+         
         </tbody>
       </table>
     </div>
