@@ -6,9 +6,7 @@ if (isset($_GET["pro_id"])) {
     $request = $db->query("SELECT * FROM produits JOIN categories ON cat_id = pro_cat_id WHERE pro_id = $id");
     $row = $request->fetch();
 }
-$tableu = [];
-$tableu[] = $row->cat_nom;
-print_r($tableu);
+
 ?>
 <div class="container">
     <form action="modif_form.php" method="GET">
@@ -89,10 +87,10 @@ print_r($tableu);
             <br>
         </div>
 
-        <a href="index.php"><input class="px-4 mx-5 btn btn-secondary"name="submit" value="Routeur"></a>
-        <a href="delete_form.php"><input class="px-4 mx-5 btn btn-danger"  name="supprimer" value="suppression"></a>
-        <a href="modif_form.php?pro_id=<?= $row->pro_id?>"><input class="px-4 mx-5 btn btn-warning" name="modifier" value="Modification"></a>
-       
+        <a href="index.php"><input class="px-4 mx-5 btn btn-secondary" name="submit" value="Routeur"></a>
+        <a href="delete.php?pro_id=<?= $row->pro_id ?>"><input class="px-4 mx-5 btn btn-danger" name="supprimer" value="suppression"></a>
+        <a href="modif_form.php?pro_id=<?= $row->pro_id ?>"><input class="px-4 mx-5 btn btn-warning" name="modifier" value="Modification"></a>
+
     </form>
     <br>
     <br>

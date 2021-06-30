@@ -21,9 +21,9 @@ try {
 
   <div class="container-fluid">
     <br>
-  <a href="form_ajout.php"><input class="mx-auto px-4 mx-5 btn btn-danger"  name="supprimer" value="ajouter"></a>
-  <br>
-  <br>
+    <div class="text-center"> <a href="form_ajout.php"><input class="mx-auto px-4 mx-5 btn btn-danger" name="ajouter" value="ajouter un produit"></a></div>
+    <br>
+    <br>
     <div class="table-responsive-md">
       <table class="table table-bordered table-sm">
         <thead class="bg-light h5 display-5">
@@ -56,7 +56,7 @@ try {
               <td class="align-middle"><?= $val->pro_bloque ?></td>
             </tr>
           <?php endforeach ?>
-         
+
         </tbody>
       </table>
     </div>
