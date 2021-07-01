@@ -3,8 +3,19 @@ require "conect_BDD.php";
 require "./header.php";
 if (isset($_GET["pro_id"])) {
     $id = $_GET["pro_id"];
+    try{
     $request = $db->query("SELECT * FROM produits JOIN categories ON cat_id = pro_cat_id WHERE pro_id = $id");
     $row = $request->fetch();
+    $request2 = $db->query("SELECT DISTINCT cat_nom FROM produits JOIN categories ON cat_id = pro_cat_id");
+    $all_rows = $request2->fetchAll();
+  
+}catch(PDOException $e){
+    $error = $e->getMessage();
+}
+if($error){
+    echo $error;
+    exit();
+}
 }
 
 ?>
@@ -19,9 +30,13 @@ if (isset($_GET["pro_id"])) {
             <br>
 
             <div>
-                <label for="categorie_for_label">Catégorie :</label><br>
-                <input class="form-control" type="text" value="<?= $row->cat_nom ?>" name="categorie" id="categorie_for_label" readonly>
-
+                <label >Catégorie :</label><br>             
+                <select class="form-control"  name="categoris" readonly>
+                <option value="<?= $row->cat_nom ?>" readonly><?= $row->cat_nom ?></option>
+            <?php foreach($all_rows as $one_row):?>
+                <option value="<?= $one_row->cat_nom ?>"><?= $one_row->cat_nom ?></option>
+                <?php endforeach ?>
+                </select>
             </div>
             <br>
 
@@ -32,8 +47,8 @@ if (isset($_GET["pro_id"])) {
 
             <br>
             <div>
-                <label for="description_for_label">Description :</label><br>
-                <textarea class="form-control" name="description" id="" cols="10" rows="3" readonly><?= $row->pro_description ?></textarea>
+                <label >Description :</label><br>
+                <textarea class="form-control" name="description" cols="10" rows="3" readonly><?= $row->pro_description ?></textarea>
             </div>
 
             <br>
@@ -60,14 +75,14 @@ if (isset($_GET["pro_id"])) {
             <label for="">Produit Bloqué :</label>
             <div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio1" value="oui" readonly <?php if ($row->pro_bloque !== NULL) {
+                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio1" value="oui" readonly <?php if ($row->pro_bloque !== NULL || $row->pro_bloque != 0 ) {
                                                                                                                                     echo "checked";
                                                                                                                                 }  ?>>
                     <label class="form-check-label" for="inlineRadio1">oui</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio2" value="non" readonly <?php if ($row->pro_bloque === NULL) {
+                    <input class="form-check-input" type="radio" name="produitbloque" id="inlineRadio2" value="non" readonly <?php if ($row->pro_bloque === NULL || $row->pro_bloque === 0 ) {
                                                                                                                                     echo "checked";
                                                                                                                                 }  ?>>
                     <label class="form-check-label" for="inlineRadio2">non</label>

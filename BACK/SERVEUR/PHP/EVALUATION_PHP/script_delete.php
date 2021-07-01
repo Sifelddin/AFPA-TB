@@ -15,5 +15,5 @@ try {
 if ($error) {
     echo $error;
 } else {
-    header("Location:index.php");
+    header("Location:tableau.php");
 }

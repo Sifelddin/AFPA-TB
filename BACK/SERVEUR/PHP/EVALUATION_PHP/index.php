@@ -1,73 +1,47 @@
-<?php
-
-require "conect_BDD.php";
+<?php 
 require "./header.php";
-
-try {
-  $req = $db->query("SELECT * FROM produits");
-} catch (PDOException $e) {
-  $error = $e->getMessage();
-}
-
 ?>
 
-<?php if ($error) : ?>
-  <?= $error ?>
-<?php else : ?>
-  <?php
-  $objs_dai = $req->fetchAll();
-  ?>
 
 
-  <div class="container-fluid">
-    <br>
-    <div class="text-center"> <a href="form_ajout.php"><input class="mx-auto px-4 mx-5 btn btn-danger" name="ajouter" value="ajouter un produit"></a></div>
-    <br>
-    <br>
-    <div class="table-responsive-md">
-      <table class="table table-bordered table-sm">
-        <thead class="bg-light h5 display-5">
-          <tr class="text-center">
-            <th>photos</th>
-            <th>ID</th>
-            <th>référence</th>
-            <th>Libellé</th>
-            <th>Prix</th>
-            <th>stock</th>
-            <th>Couleur</th>
-            <th>Ajout</th>
-            <th>Modif</th>
-            <th>Bloqué</th>
-          </tr>
-        </thead>
-        <tbody class="table-hover">
 
-          <?php foreach ($objs_dai as  $val) : ?>
-            <tr class="table-warning text-center ">
-              <td class="align-middle"><img style="width: 160px;" class="img-responsive img-fluid" src="./jarditou_html_zip/jarditou_photos/11.jpg" alt=""></td>
-              <td class="align-middle"><?= $val->pro_id ?></td>
-              <td class="align-middle"><?= $val->pro_ref ?></td>
-              <td class="align-middle"><strong><a class="text-danger" href="details.php?pro_id=<?= $val->pro_id ?>"><?= $val->pro_libelle ?></strong></a></td>
-              <td class="align-middle"><?= $val->pro_prix . " €" ?></td>
-              <td class="align-middle"><?= $val->pro_stock ?></td>
-              <td class="align-middle"><?= $val->pro_couleur ?></td>
-              <td class="align-middle"><?= $val->pro_d_ajout ?></td>
-              <td class="align-middle"><?= $val->pro_d_modif ?></td>
-              <td class="align-middle"><?= $val->pro_bloque ?></td>
-            </tr>
-          <?php endforeach ?>
+   <div class="container-fluid ">
 
-        </tbody>
-      </table>
+
+       <div class="row">
+      <div class="col-lg-8 col-12  shadow p-3 mb-3 bg-body rounded"> 
+        
+        <article class="article1">
+        <h2 class="subtitle">L'entreprise</h2>
+       
+        <p> Notre entreprise familiale met tout son savoir-faire à votre disposition dans le domaine du jardin et du paysagisme.</p>
+        <p>Créée il y a 70 ans, notre entreprise vend fleurs, arbustes, matériel à main et motorisés.</p>
+        <p>Implantés à Amiens, nous intervenons dans tout le département de la Somme : Albert, Doullens, Péronne, Abbeville, Corbie</p>
+        </article>
+    
+    
+        <article class="article1">
+        <h2 class="subtitle">Qualité</h2>
+        
+        <p> Nous mettons à votre disposition un service personnalisé, avec 1 seul interlocuteur durant tout votre projet.</p>
+        <p>Vous serez séduit par notre expertise, nos compétences et notre sérieux.</p> 
+        </article>  
+        <article class="article3">
+        <h2 class="subtitle">Devis gratuit</h2>
+        <p>Vous pouvez bien sûr contacter pour de plus amples informations ou pour une demande d’intervention. Vous souhaitez un devis ? Nous vous le réalisons gratuitement.</p>
+        </article>  
     </div>
+    <side-bar class=" col-lg-4 col-12 bg-warning  shadow p-3 mb-3 bg-body rounded">
+        <h2 class="fs-lg-3 text-center">[COLONNE DE DROITE]</h2>
+        
+    </side-bar>
+</div>
+</div>
 
 
-  </div>
 
 
 
-
-<?php endif ?>
 <?php
 require "./footer.php";
 

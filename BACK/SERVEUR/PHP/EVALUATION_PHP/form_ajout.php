@@ -1,6 +1,17 @@
 <?php
+require "./conect_BDD.php";
+require "./header.php";
 
-require "./header.php"
+try {
+    $req= $db->query("SELECT DISTINCT cat_nom ,cat_id  FROM produits JOIN categories ON cat_id = pro_cat_id");
+    $all_rows = $req->fetchAll();
+} catch (PDOException $e){
+$error = $e->getMessage();
+}
+if($error){
+    echo $error;
+    exit();
+}
 ?>
 
 
@@ -12,9 +23,13 @@ require "./header.php"
     <form action="script_ajout.php" method="POST">
         <div class="form-group">
 
-            <div>
-                <label>"pro_cat_id" - Catégorie du produit:</label><br>
-                <input class="form-control" type="number" value="" name="pro_cat_id">
+        <div>
+                <label >Catégorie :</label><br>             
+                <select class="form-control"  name="cat_id" >              
+            <?php foreach($all_rows as $one_row):?>
+                <option value="<?= $one_row->cat_id ?>"><?= $one_row->cat_nom ?></option>
+                <?php endforeach ?>
+                </select>
             </div>
             <br>
             <div>
@@ -38,7 +53,7 @@ require "./header.php"
             <br>
             <div>
                 <label>"pro_prix"- Prix :</label><br>
-                <input class="form-control" type="number" value="" name="prix">
+                <input class="form-control" type="text" value="" name="prix">
             </div>
 
             <br>
@@ -78,7 +93,7 @@ require "./header.php"
             </div>
             <br>
             <input type="submit" class="btn btn-success" name="submit" value="Ajouter">
-            <a href="index.php"><input class="btn btn-secondary" name="routeur" value="routeur"></a>
+            <a href="tableau.php"><input class="btn btn-secondary" name="routeur" value="routeur"></a>
     </form>
 </div>
 
