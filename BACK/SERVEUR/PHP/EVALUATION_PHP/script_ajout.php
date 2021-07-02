@@ -8,17 +8,17 @@ try {
     if (isset($_POST["submit"])) {
 
 
- $categorie = $_POST["cat_id"];
-$ref = $_POST['pro_ref'];
-$libelle = $_POST['libelle'];
-$description = $_POST['description'];
-$prix = $_POST['prix'];
-$stock = $_POST['stock'];
-$couleur = $_POST['couleur'];
-$photo = $_POST['photo'];
-$date_ajout = $_POST['date-Ajout'];
-$date_modif = $_POST['date-modif'];
-$pro_bloque = $_POST['pro-bloque'];
+        $categorie = $_POST["cat_id"];
+        $ref = $_POST['pro_ref'];
+        $libelle = $_POST['libelle'];
+        $description = $_POST['description'];
+        $prix = $_POST['prix'];
+        $stock = $_POST['stock'];
+        $couleur = $_POST['couleur'];
+        $photo = $_POST['photo'];
+        $date_ajout = $_POST['date-Ajout'];
+        $date_modif = $_POST['date-modif'];
+        $pro_bloque = $_POST['pro-bloque'];
 
 
 
@@ -39,48 +39,16 @@ $pro_bloque = $_POST['pro-bloque'];
             ':pro_bloque' => $pro_bloque
 
         ]);
-
-
     }
 } catch (PDOException $e) {
     $error = $e->getMessage();
 }
 
-if($error){
+if ($error) {
     echo $error;
-}else{
+} else {
 
 
 
- //   header("Location:tableau.php");
-
-require "header.php";
+    header("Location:tableau.php");
 }
-?>
-<div class="container">
-<form action="" method="post" enctype="multipart/form-data">
-
-            <div>
-                <label>upload image :</label><br>
-                <input class="form-control" type="file" name="file">
-                <br><br>
-                <input class="px-4 mx-5 btn btn-danger" type="submit" name="enregistrer" value="Enregistrer">
-            </div>
-            <br>
-</form>
-</div>
-<?php
-
-        if(isset($_POST["enregistrer"])){
-            $file = $_FILES['file'];
-            $fileName = $file['file']['name'];
-            $filetmp = $file['file']['tmp_name'];
-            $fileSize = $file['file']['size'];
-            $fileError = $file['file']['error'];
-            $fileType = $file['file']['type'];
-            
-            $fileExt =explode(".",$fileName) 
-        }
-
-require "./footer.php";
-?>

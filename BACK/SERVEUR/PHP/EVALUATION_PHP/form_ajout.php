@@ -1,14 +1,15 @@
 <?php
 require "./conect_BDD.php";
 require "./header.php";
-
+$tableau = ["11", "12", "13", "8", "7"];
+shuffle($tableau);
 try {
-    $req= $db->query("SELECT DISTINCT cat_nom ,cat_id  FROM produits JOIN categories ON cat_id = pro_cat_id");
+    $req = $db->query("SELECT DISTINCT cat_nom ,cat_id  FROM produits JOIN categories ON cat_id = pro_cat_id");
     $all_rows = $req->fetchAll();
-} catch (PDOException $e){
-$error = $e->getMessage();
+} catch (PDOException $e) {
+    $error = $e->getMessage();
 }
-if($error){
+if ($error) {
     echo $error;
     exit();
 }
@@ -17,18 +18,18 @@ if($error){
 
 
 <div class="container">
-    <img class="img-fluid rounded mx-auto d-block" src="./jarditou_html_zip/jarditou_photos/7.jpg" alt="">
+    <img class="img-responsive img-fluid rounded mx-auto d-block" src="./jarditou_html_zip/jarditou_photos/<?= $tableau[2] ?>.jpg" alt="">
     <h2>formulaire d'ajout d'un produit</h2>
     <br>
     <form action="script_ajout.php" method="POST">
         <div class="form-group">
 
-        <div>
-                <label >Catégorie :</label><br>             
-                <select class="form-control"  name="cat_id" >              
-            <?php foreach($all_rows as $one_row):?>
-                <option value="<?= $one_row->cat_id ?>"><?= $one_row->cat_nom ?></option>
-                <?php endforeach ?>
+            <div>
+                <label>Catégorie :</label><br>
+                <select class="form-control" name="cat_id">
+                    <?php foreach ($all_rows as $one_row) : ?>
+                        <option value="<?= $one_row->cat_id ?>"><?= $one_row->cat_nom ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
             <br>
@@ -89,7 +90,7 @@ if($error){
             <br>
             <div>
                 <label>"pro_bloque" Bloquer le produit à la vente :</label><br>
-                <input class="form-control" type="number" value="" name="pro-bloque">
+                <input class="form-control" type="text" value="" name="pro-bloque">
             </div>
             <br>
             <input type="submit" class="btn btn-success" name="submit" value="Ajouter">
